@@ -522,6 +522,28 @@ section.itemsheet, form.ordemparanormal.actor {
 }
 // TODO: Separar SCSS entre geral, agente, ameaça.
 .threat {
+	.header-identify {
+		margin-bottom: 5px;
+		row-gap: 5px;
+
+		h1 {
+			margin: 0;
+			border: none;
+		}
+
+		.healthPoints {
+			text-align: center;
+
+			.display-flex {
+				justify-content: center;
+
+				input {
+					width: 80px;
+				}
+			}
+		}
+	}
+
 	#senses, #defenses, #attributes, #general,
 	#disturbingPresence, #actions, #abilities {
 		padding: 5px;

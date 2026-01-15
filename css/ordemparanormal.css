@@ -702,6 +702,23 @@ dialog.ordemparanormal.application {
   font-family: "Optima Nova LT PRO", "Roboto", sans-serif, "Arial";
   font-weight: bold;
 }
+.system-ordemparanormal .threat .header-identify {
+  margin-bottom: 5px;
+  row-gap: 5px;
+}
+.system-ordemparanormal .threat .header-identify h1 {
+  margin: 0;
+  border: none;
+}
+.system-ordemparanormal .threat .header-identify .healthPoints {
+  text-align: center;
+}
+.system-ordemparanormal .threat .header-identify .healthPoints .display-flex {
+  justify-content: center;
+}
+.system-ordemparanormal .threat .header-identify .healthPoints .display-flex input {
+  width: 80px;
+}
 .system-ordemparanormal .threat #senses, .system-ordemparanormal .threat #defenses, .system-ordemparanormal .threat #attributes, .system-ordemparanormal .threat #general,
 .system-ordemparanormal .threat #disturbingPresence, .system-ordemparanormal .threat #actions, .system-ordemparanormal .threat #abilities {
   padding: 5px;
