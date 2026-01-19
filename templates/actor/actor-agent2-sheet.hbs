@@ -1,0 +1,264 @@
+<section class="{{actor.type}} op-agent2-sheet" id="agent2" autocomplete="off">
+	<div class="op-agent2-sheet__noise"></div>
+	<div class="op-agent2-sheet__container">
+		<header class="op-agent2-sheet__header">
+			<div class="op-agent2-sheet__field">
+				<label class="op-agent2-sheet__label">Personagem</label>
+				<input type="text" name="name" value="{{actor.name}}" placeholder="Nome do personagem" />
+			</div>
+
+			<div class="op-agent2-sheet__title">
+				<h1>ORDEM PARANORMAL</h1>
+				<span>RPG</span>
+			</div>
+
+			<div class="op-agent2-sheet__field">
+				<label class="op-agent2-sheet__label">Jogador</label>
+				<input type="text" name="system.player" value="{{system.player}}" placeholder="Nome do jogador" />
+			</div>
+		</header>
+
+		<div class="op-agent2-sheet__banner">FICHA DE AGENTE</div>
+
+		<div class="op-agent2-sheet__grid">
+			<div class="op-agent2-sheet__col op-agent2-sheet__col--left">
+				<div class="op-agent2-sheet__attribute-wheel">
+					<div class="op-agent2-sheet__wheel-center">ATRIBUTOS</div>
+
+					<div class="op-agent2-sheet__attr op-agent2-sheet__attr--agi">
+						<span class="op-agent2-sheet__attr-name">Agilidade</span>
+						<span class="op-agent2-sheet__attr-label">AGI</span>
+						<input type="number" name="system.attributes.dex.value" value="{{system.attributes.dex.value}}" data-dtype="Number" />
+					</div>
+
+					<div class="op-agent2-sheet__attr op-agent2-sheet__attr--int">
+						<span class="op-agent2-sheet__attr-name">Intelecto</span>
+						<span class="op-agent2-sheet__attr-label">INT</span>
+						<input type="number" name="system.attributes.int.value" value="{{system.attributes.int.value}}" data-dtype="Number" />
+					</div>
+
+					<div class="op-agent2-sheet__attr op-agent2-sheet__attr--vig">
+						<span class="op-agent2-sheet__attr-name">Vigor</span>
+						<span class="op-agent2-sheet__attr-label">VIG</span>
+						<input type="number" name="system.attributes.vit.value" value="{{system.attributes.vit.value}}" data-dtype="Number" />
+					</div>
+
+					<div class="op-agent2-sheet__attr op-agent2-sheet__attr--pre">
+						<span class="op-agent2-sheet__attr-name">Presença</span>
+						<span class="op-agent2-sheet__attr-label">PRE</span>
+						<input type="number" name="system.attributes.pre.value" value="{{system.attributes.pre.value}}" data-dtype="Number" />
+					</div>
+
+					<div class="op-agent2-sheet__attr op-agent2-sheet__attr--for">
+						<span class="op-agent2-sheet__attr-name">Força</span>
+						<span class="op-agent2-sheet__attr-label">FOR</span>
+						<input type="number" name="system.attributes.str.value" value="{{system.attributes.str.value}}" data-dtype="Number" />
+					</div>
+				</div>
+
+				<div class="op-agent2-sheet__info-grid">
+					<div class="op-agent2-sheet__field">
+						<label class="op-agent2-sheet__label">Origem</label>
+						<select name="system.origin" data-dtype="String">
+							{{ selectOptions optionOrigins selected=system.origin localize=true blank="—" }}
+						</select>
+					</div>
+					<div class="op-agent2-sheet__field">
+						<label class="op-agent2-sheet__label">Classe</label>
+						<select name="system.class" data-dtype="String">
+							{{ selectOptions optionClass selected=system.class localize=true blank="—" }}
+						</select>
+					</div>
+					<div class="op-agent2-sheet__field">
+						<label class="op-agent2-sheet__label">NEX</label>
+						<input type="number" name="system.NEX.value" value="{{system.NEX.value}}" data-dtype="Number" />
+					</div>
+					<div class="op-agent2-sheet__field">
+						<label class="op-agent2-sheet__label">Desl</label>
+						<input type="number" name="system.desloc.value" value="{{system.desloc.value}}" data-dtype="Number" />
+					</div>
+				</div>
+			</div>
+
+			<div class="op-agent2-sheet__col op-agent2-sheet__col--center">
+				<div class="op-agent2-sheet__stats">
+					<div class="op-agent2-sheet__stat-block">
+						<div class="op-agent2-sheet__stat-header">
+							<span>PV</span>
+							<span>Pontos de Vida</span>
+						</div>
+						<div class="op-agent2-sheet__stat-values">
+							<div>
+								<input type="number" name="system.PV.value" value="{{system.PV.value}}" data-dtype="Number" />
+								<span>Atuais</span>
+							</div>
+							<div>
+								<input type="number" name="system.PV.max" value="{{system.PV.max}}" data-dtype="Number" />
+								<span>Máximo</span>
+							</div>
+						</div>
+					</div>
+
+					{{#if usingWithoutSanityRule}}
+						<div class="op-agent2-sheet__stat-block">
+							<div class="op-agent2-sheet__stat-header">
+								<span>PD</span>
+								<span>Pontos de Determinação</span>
+							</div>
+							<div class="op-agent2-sheet__stat-values">
+								<div>
+									<input type="number" name="system.PD.value" value="{{system.PD.value}}" data-dtype="Number" />
+									<span>Atuais</span>
+								</div>
+								<div>
+									<input type="number" name="system.PD.max" value="{{system.PD.max}}" data-dtype="Number" />
+									<span>Máximo</span>
+								</div>
+							</div>
+						</div>
+					{{else}}
+						<div class="op-agent2-sheet__stat-block">
+							<div class="op-agent2-sheet__stat-header">
+								<span>PE</span>
+								<span>Pontos de Esforço</span>
+							</div>
+							<div class="op-agent2-sheet__stat-values">
+								<div>
+									<input type="number" name="system.PE.value" value="{{system.PE.value}}" data-dtype="Number" />
+									<span>Atuais</span>
+								</div>
+								<div>
+									<input type="number" name="system.PE.max" value="{{system.PE.max}}" data-dtype="Number" />
+									<span>Máximo</span>
+								</div>
+							</div>
+						</div>
+					{{/if}}
+
+					<div class="op-agent2-sheet__defense">
+						<div class="op-agent2-sheet__defense-shield">
+							<span>Defesa</span>
+							<strong>{{system.defense.value}}</strong>
+						</div>
+						<small>= 10 + AGI + Equip</small>
+					</div>
+
+					{{#unless usingWithoutSanityRule}}
+						<div class="op-agent2-sheet__stat-block">
+							<div class="op-agent2-sheet__stat-header">
+								<span>SAN</span>
+								<span>Sanidade</span>
+							</div>
+							<div class="op-agent2-sheet__stat-values">
+								<div>
+									<input type="number" name="system.SAN.value" value="{{system.SAN.value}}" data-dtype="Number" />
+									<span>Atuais</span>
+								</div>
+								<div>
+									<input type="number" name="system.SAN.max" value="{{system.SAN.max}}" data-dtype="Number" />
+									<span>Máximo</span>
+								</div>
+							</div>
+						</div>
+					{{/unless}}
+				</div>
+
+				<div class="op-agent2-sheet__field">
+					<label class="op-agent2-sheet__label">Proteção</label>
+					<input type="text" name="system.protection" value="{{system.protection}}" placeholder="Proteção" />
+				</div>
+				<div class="op-agent2-sheet__field">
+					<label class="op-agent2-sheet__label">Resistências</label>
+					<input type="text" name="system.resistances" value="{{system.resistances}}" placeholder="Resistências" />
+				</div>
+
+				<div class="op-agent2-sheet__attacks">
+					<div class="op-agent2-sheet__attacks-header">
+						<h3>ATAQUES</h3>
+						{{#if @root.editable}}
+							<button
+								type="button"
+								data-action="createDoc"
+								data-document-class="Item"
+								data-type="armament"
+								class="op-agent2-sheet__add-button"
+							>
+								+ Adicionar
+							</button>
+						{{/if}}
+					</div>
+
+					<div class="op-agent2-sheet__attacks-table">
+						<div class="op-agent2-sheet__attacks-row op-agent2-sheet__attacks-row--header">
+							<div>Ataque</div>
+							<div>Teste</div>
+							<div>Dano</div>
+							<div>Crítico / Alcance / Especial</div>
+						</div>
+
+						<ol class="op-agent2-sheet__attacks-list">
+							{{#each armament as |item id|}}
+								<li class="op-agent2-sheet__attacks-row" data-document-class="Item" data-item-id="{{item._id}}">
+									<div class="op-agent2-sheet__attacks-name">
+										<button type="button" data-action="viewDoc">{{item.name}}</button>
+									</div>
+									<div>{{item.system.formulas.attack.formula}}</div>
+									<div>{{item.system.formulas.damage.formula}}</div>
+									<div>
+										{{#if item.system.critical}}{{item.system.critical}}{{else}}—{{/if}} /
+										{{#if item.system.range}}{{item.system.range}}{{else}}—{{/if}} /
+										{{#if item.system.formulas.extraFormula}}{{item.system.formulas.extraFormula}}{{else}}—{{/if}}
+									</div>
+								</li>
+							{{/each}}
+						</ol>
+
+						{{#unless armament.length}}
+							<div class="op-agent2-sheet__attacks-empty">Nenhum ataque registrado.</div>
+						{{/unless}}
+					</div>
+				</div>
+			</div>
+
+			<div class="op-agent2-sheet__col op-agent2-sheet__col--right">
+				<div class="op-agent2-sheet__skills-header">PERÍCIAS</div>
+				<div class="op-agent2-sheet__skills">
+					<div class="op-agent2-sheet__skills-row op-agent2-sheet__skills-row--header">
+						<div>Perícia</div>
+						<div>Dados</div>
+						<div>Bônus</div>
+						<div>Treino</div>
+						<div>Outros</div>
+					</div>
+
+					{{#each system.skills as |skill key|}}
+						<div class="op-agent2-sheet__skills-row" data-key="{{key}}">
+							<div class="op-agent2-sheet__skill-name">
+								<span>{{skill.label}}</span>
+								{{#if skill.conditions.trained}}<span class="op-agent2-sheet__skill-mark">°</span>{{/if}}
+								{{#if skill.conditions.load}}<span class="op-agent2-sheet__skill-mark">+</span>{{/if}}
+							</div>
+							<div class="op-agent2-sheet__skill-attr">
+								{{toUpperCase (localize (concat "op." skill.attr.[0] "Abv"))}}
+							</div>
+							<div class="op-agent2-sheet__skill-total">
+								{{#if skill.degree.value}}+{{skill.degree.value}}{{else}}+0{{/if}}
+							</div>
+							<div class="op-agent2-sheet__skill-training">
+								<button type="button" data-action="onSetSkillDegree" data-skill="{{key}}" data-degree="trained" class="{{#if (or (eq skill.degree.label 'trained') (eq skill.degree.label 'veteran') (eq skill.degree.label 'expert'))}}is-active{{/if}}"></button>
+								<button type="button" data-action="onSetSkillDegree" data-skill="{{key}}" data-degree="veteran" class="{{#if (or (eq skill.degree.label 'veteran') (eq skill.degree.label 'expert'))}}is-active{{/if}}"></button>
+								<button type="button" data-action="onSetSkillDegree" data-skill="{{key}}" data-degree="expert" class="{{#if (eq skill.degree.label 'expert')}}is-active{{/if}}"></button>
+							</div>
+							<div class="op-agent2-sheet__skill-other">
+								<input type="number" name="system.skills.{{key}}.mod" value="{{skill.mod}}" data-dtype="Number" />
+							</div>
+						</div>
+					{{/each}}
+				</div>
+				<div class="op-agent2-sheet__skills-footer">+ Penalidade de carga | ° Somente treinado</div>
+			</div>
+		</div>
+
+		<footer class="op-agent2-sheet__footer">Ordem Paranormal RPG - Ficha Digital Não Oficial</footer>
+	</div>
+</section>

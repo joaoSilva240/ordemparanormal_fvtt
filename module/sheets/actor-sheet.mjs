@@ -43,7 +43,8 @@ export class OrdemActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			toggleEffect: this._toggleEffect,
 			onRoll: this.#onRoll,
 			onRollSkillCheck: this.#onRollSkillCheck,
-			onRollAttributeTest: this.#onRollAttributeTest
+			onRollAttributeTest: this.#onRollAttributeTest,
+			onSetSkillDegree: this.#onSetSkillDegree
 		},
 		 dragDrop: [{ dragSelector: '[data-drag]', dropSelector: null }],
 	};
@@ -51,6 +52,7 @@ export class OrdemActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	/** @inheritDoc */
 	static PARTS = {
 		agent: { id: 'agent', template: 'systems/ordemparanormal/templates/actor/actor-agent-sheet.hbs' },
+		agent2: { id: 'agent2', template: 'systems/ordemparanormal/templates/actor/actor-agent2-sheet.hbs' },
 		tabs: { id: 'tabs', template: 'templates/generic/tab-navigation.hbs' },
 		skills: { id: 'skills', template: 'systems/ordemparanormal/templates/actor/parts/actor-skills.hbs' },
 		inventory: { id: 'inventory', template: 'systems/ordemparanormal/templates/actor/parts/actor-inventory.hbs' },
@@ -79,13 +81,15 @@ export class OrdemActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 	_configureRenderOptions(options) {
 		super._configureRenderOptions(options);
 		// Not all parts always render
-		options.parts = ['agent', 'tabs'];
+		options.parts = this.document.type === 'agent2' ? ['agent2'] : ['agent', 'tabs'];
 		// Don't show the other tabs if only limited view
 		if (this.document.limited) return;
 		// Control which parts show based on document subtype
 		switch (this.document.type) {
 		case 'agent':
 			options.parts.push('skills', 'inventory', 'abilities', 'rituals', 'biography', 'effects');
+			break;
+		case 'agent2':
 			break;
 		case 'npc':
 			options.parts.push('gear', 'effects');
@@ -122,11 +126,11 @@ export class OrdemActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			usingWithoutSanityRule: this.usingWithoutSanityRule,
 			isV12: this.isV12,
 			isSurvivor: this.isSurvivor,
-			tabs: this._getTabs(options.parts)
+			tabs: options.parts.includes('tabs') ? this._getTabs(options.parts) : {}
 		});
 
 		// Prepara os dados do Agente e seus Items.
-		if (this.document.type == 'agent') {
+		if (this.document.type == 'agent' || this.document.type == 'agent2') {
 			this._prepareItems(context);
 		}
 
@@ -757,6 +761,20 @@ export class OrdemActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		event.preventDefault();
 		const skill = target.closest('[data-key]').dataset.key;
 		return this.actor.rollSkill({ skill, event });
+	}
+
+	/**
+   * Handle setting a skill training level.
+   * @param {Event} event
+   * @private
+   */
+	static async #onSetSkillDegree(event, target) {
+		event.preventDefault();
+		const { skill, degree } = target.dataset;
+		if (!skill || !degree) return;
+		const current = this.actor.system.skills?.[skill]?.degree?.label;
+		const newDegree = current === degree ? 'untrained' : degree;
+		return this.actor.update({ [`system.skills.${skill}.degree.label`]: newDegree });
 	}
 	
 

@@ -71,6 +71,7 @@ Hooks.once('init', function () {
 	Actors.unregisterSheet('core', ActorSheet);
 	Items.unregisterSheet('core', ItemSheet);
 	Actors.registerSheet('ordemparanormal', OrdemActorSheet, { types: ['agent'], makeDefault: true });
+	Actors.registerSheet('ordemparanormal', OrdemActorSheet, { types: ['agent2'], makeDefault: true });
 	Actors.registerSheet('ordemparanormal', OrdemThreatSheet, { types: ['threat'], makeDefault: true });
 	Items.registerSheet('ordemparanormal', OrdemItemSheet, { makeDefault: true });
 
