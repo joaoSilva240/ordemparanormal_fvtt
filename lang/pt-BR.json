@@ -3,6 +3,7 @@
 	"TYPES.Actor.agent": "Agente",
 	"TYPES.Actor.agent2": "Agente 2",
 	"TYPES.Actor.threat": "Ameaça",
+	"TYPES.Actor.threat2": "Ameaça 2",
 
 	"TYPES.Item.protection": "Proteção",
 	"op.protection.plural": "Proteções",

@@ -24,6 +24,21 @@
   "scripts": [
     "media/vendor/selectize/selectize.min.js"
   ],
+  "documentTypes": {
+    "Actor": [
+      "agent",
+      "agent2",
+      "threat",
+      "threat2"
+    ],
+    "Item": [
+      "armament",
+      "generalEquipment",
+      "protection",
+      "ability",
+      "ritual"
+    ]
+  },
   "packs": [
     {
       "name": "generalptbr",

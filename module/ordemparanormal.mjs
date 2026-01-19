@@ -14,6 +14,7 @@ import { OrdemItem } from './documents/item.mjs';
 import { OrdemActorSheet } from './sheets/actor-sheet.mjs';
 import { OrdemItemSheet } from './sheets/item-sheet.mjs';
 import { OrdemThreatSheet } from './sheets/threat-sheet.mjs';
+import { OrdemThreat2Sheet } from './sheets/threat2-sheet.mjs';
 
 import { op } from './helpers/config.mjs';
 import displayMessages from './components/message-system.mjs';
@@ -73,6 +74,7 @@ Hooks.once('init', function () {
 	Actors.registerSheet('ordemparanormal', OrdemActorSheet, { types: ['agent'], makeDefault: true });
 	Actors.registerSheet('ordemparanormal', OrdemActorSheet, { types: ['agent2'], makeDefault: true });
 	Actors.registerSheet('ordemparanormal', OrdemThreatSheet, { types: ['threat'], makeDefault: true });
+	Actors.registerSheet('ordemparanormal', OrdemThreat2Sheet, { types: ['threat2'], makeDefault: true });
 	Items.registerSheet('ordemparanormal', OrdemItemSheet, { makeDefault: true });
 
 	// Configure Fonts

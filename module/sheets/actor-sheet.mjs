@@ -22,8 +22,8 @@ export class OrdemActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		classes: ['ordemparanormal', 'sheet', 'actor', 'themed', 'theme-light'],
 		tag: 'form',
 		position: {
-			width: 600,
-			height: 820
+			width: 680,
+			height: 900
 		},
 		window: {
 			resizable: true,

@@ -9,7 +9,7 @@ export default function () {
 	 */
 	Hooks.on('preCreateActor', function (actor, data) {
 		const hasBarBrawl = game.modules?.get('barbrawl')?.active;
-		if (actor.type === 'threat') {
+		if (actor.type === 'threat' || actor.type === 'threat2') {
 			const prototypeToken = { disposition: -1, actorLink: false };
 			actor.updateSource({ prototypeToken }); // Set disposition to "Hostile"
 			if (hasBarBrawl) {

@@ -296,7 +296,7 @@ dialog.ordemparanormal.application {
   color: #222;
 }
 .system-ordemparanormal .application.theme-light input, .system-ordemparanormal .application.theme-light select {
-  color: #222 !important;
+  color: #757575 !important;
 }
 .system-ordemparanormal section.itemsheet, .system-ordemparanormal form.ordemparanormal.actor {
   overflow: hidden;
@@ -1916,9 +1916,15 @@ dialog.ordemparanormal.application {
   font-weight: 700;
 }
 .system-ordemparanormal .op-agent2-sheet__grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
   gap: 16px;
+}
+.op-agent2-sheet__defense-and-fields{
+    display: flex;
+    padding: 10px;
+    align-items: center;
 }
 .system-ordemparanormal .op-agent2-sheet__col {
   display: flex;
@@ -1929,8 +1935,8 @@ dialog.ordemparanormal.application {
   position: relative;
   width: 100%;
   aspect-ratio: 1/1;
-  max-width: 320px;
-  margin: 0 auto;
+  max-width: 260px;
+  margin-top: 16px;
 }
 .system-ordemparanormal .op-agent2-sheet__wheel-center {
   position: absolute;
@@ -1939,10 +1945,10 @@ dialog.ordemparanormal.application {
   transform: translate(-50%, -50%);
   background: #1a1a1a;
   color: #f4e8d8;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  width: 92px;
+  height: 92px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1952,8 +1958,8 @@ dialog.ordemparanormal.application {
 }
 .system-ordemparanormal .op-agent2-sheet__attr {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 62px;
+  height: 62px;
   border-radius: 50%;
   background: #f4e8d8;
   border: 2px solid #111;
@@ -1965,14 +1971,15 @@ dialog.ordemparanormal.application {
   text-align: center;
 }
 .system-ordemparanormal .op-agent2-sheet__attr input {
-  width: 42px;
+  width: 34px;
   text-align: center;
   border: none;
   background: transparent;
   font-weight: 700;
+  font-size: 13px;
 }
 .system-ordemparanormal .op-agent2-sheet__attr-name {
-  font-size: 10px;
+  font-size: 9px;
   text-transform: uppercase;
 }
 .system-ordemparanormal .op-agent2-sheet__attr-label {
@@ -2004,11 +2011,6 @@ dialog.ordemparanormal.application {
   transform: translate(-50%, -50%);
 }
 .system-ordemparanormal .op-agent2-sheet__info-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-.system-ordemparanormal .op-agent2-sheet__stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
@@ -2148,7 +2150,7 @@ dialog.ordemparanormal.application {
   letter-spacing: 0.2em;
 }
 .system-ordemparanormal .op-agent2-sheet__skills {
-  max-height: 760px;
+  max-height: 520px;
   overflow-y: auto;
   padding-right: 4px;
 }
@@ -2156,8 +2158,8 @@ dialog.ordemparanormal.application {
   display: grid;
   grid-template-columns: 1.8fr 0.6fr 0.6fr 1fr 0.6fr;
   align-items: center;
-  padding: 4px 2px;
-  font-size: 12px;
+  padding: 3px 2px;
+  font-size: 11px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .system-ordemparanormal .op-agent2-sheet__skills-row--header {
@@ -2182,8 +2184,8 @@ dialog.ordemparanormal.application {
   justify-content: center;
 }
 .system-ordemparanormal .op-agent2-sheet__skill-training button {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   border: 1px solid #111;
   background: transparent;
@@ -2211,6 +2213,550 @@ dialog.ordemparanormal.application {
   text-align: center;
   font-size: 10px;
   color: #666;
+}
+.system-ordemparanormal .op-threat2-sheet {
+  position: relative;
+  color: #1a1a1a;
+  background: #f4e8d8;
+  font-family: "Warnock Pro", "Roboto", sans-serif;
+  padding: 12px;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+.system-ordemparanormal .op-threat2-sheet input,
+.system-ordemparanormal .op-threat2-sheet textarea {
+  font-family: inherit;
+}
+.system-ordemparanormal .op-threat2-sheet__noise {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+.system-ordemparanormal .op-threat2-sheet__container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(2px);
+  border: 2px solid #111;
+  padding: 18px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.15);
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 22px;
+}
+.system-ordemparanormal .op-threat2-sheet__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 3px solid #111;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+.system-ordemparanormal .op-threat2-sheet__name {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-family: "Creepster", cursive;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__logo {
+  text-align: right;
+  font-family: "Creepster", cursive;
+  font-size: 18px;
+  line-height: 1;
+}
+.system-ordemparanormal .op-threat2-sheet__logo span {
+  display: block;
+}
+.system-ordemparanormal .op-threat2-sheet__description {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+  min-height: 140px;
+}
+.system-ordemparanormal .op-threat2-sheet__description-side {
+  display: flex;
+  gap: 10px;
+}
+.system-ordemparanormal .op-threat2-sheet__description-tag {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #777;
+  border-left: 2px dashed #aaa;
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+}
+.system-ordemparanormal .op-threat2-sheet__textarea {
+  width: 100%;
+  min-height: 120px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #b8b0a6;
+  padding: 8px;
+  resize: none;
+  font-style: italic;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__grid {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 20px;
+}
+.system-ordemparanormal .op-threat2-sheet__left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.system-ordemparanormal .op-threat2-sheet__badge {
+  position: relative;
+}
+.system-ordemparanormal .op-threat2-sheet__badge-main {
+  background: #8b0000;
+  color: #fff;
+  padding: 10px 16px 10px 12px;
+  clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%);
+}
+.system-ordemparanormal .op-threat2-sheet__badge-element {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: inherit;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__badge-name {
+  font-family: "Creepster", cursive;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+.system-ordemparanormal .op-threat2-sheet__badge-element {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #fff;
+}
+.system-ordemparanormal .op-threat2-sheet__badge-element::placeholder {
+  color: rgb(255, 255, 255);
+}
+.system-ordemparanormal .op-threat2-sheet__badge-vd {
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 70px;
+  height: 70px;
+  background: #111;
+  color: #fff;
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.system-ordemparanormal .op-threat2-sheet__badge-vd span {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #fff;
+}
+.system-ordemparanormal .op-threat2-sheet__badge-vd input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__badge-vd input::placeholder {
+  color: rgb(255, 255, 255);
+}
+.system-ordemparanormal .op-threat2-sheet__badge-row {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.system-ordemparanormal .op-threat2-sheet__badge-row input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__badge-dot {
+  color: #7b0000;
+}
+.system-ordemparanormal .op-threat2-sheet__section-title {
+  background: #111;
+  color: #f4e8d8;
+  padding: 4px 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.system-ordemparanormal .op-threat2-sheet__attributes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 6px 2px 0;
+}
+.system-ordemparanormal .op-threat2-sheet__attr {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000000;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.system-ordemparanormal .op-threat2-sheet__hex {
+  width: 30px;
+  height: 30px;
+  background: #111;
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.system-ordemparanormal .op-threat2-sheet__hex input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__hp {
+  display: flex;
+  align-items: center;
+  background: #111;
+  color: #f4e8d8;
+}
+.system-ordemparanormal .op-threat2-sheet__hp-label {
+  padding: 4px 8px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.system-ordemparanormal .op-threat2-sheet__hp input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__resistances {
+  background: rgba(110, 140, 180, 0.15);
+  border: 1px solid rgba(90, 110, 150, 0.25);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+}
+.system-ordemparanormal .op-threat2-sheet__line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.system-ordemparanormal .op-threat2-sheet__line span {
+  min-width: 110px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.system-ordemparanormal .op-threat2-sheet__line input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+  font-size: 11px;
+}
+.system-ordemparanormal .op-threat2-sheet__defenses {
+  border: 2px solid #111;
+}
+.system-ordemparanormal .op-threat2-sheet__defenses-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  color: #f4e8d8;
+  padding: 4px 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.system-ordemparanormal .op-threat2-sheet__defenses-header span,
+.system-ordemparanormal .op-threat2-sheet__defenses-header input {
+  color: #fff;
+}
+.system-ordemparanormal .op-threat2-sheet__defenses-header input {
+  width: 60px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__defenses-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  border-top: 1px solid #ffffff;
+  font-size: 11px;
+}
+.system-ordemparanormal .op-threat2-sheet__defenses-row div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.system-ordemparanormal .op-threat2-sheet__defenses-row input {
+  width: 32px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  text-align: center;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__movement {
+  display: flex;
+  align-items: center;
+  background: #111;
+  color: #f4e8d8;
+}
+.system-ordemparanormal .op-threat2-sheet__movement-label {
+  padding: 4px 8px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.system-ordemparanormal .op-threat2-sheet__movement-values {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  color: #111;
+  background: #f4e8d8;
+}
+.system-ordemparanormal .op-threat2-sheet__movement-values div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.system-ordemparanormal .op-threat2-sheet__movement-values input {
+  width: 40px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #111;
+  text-align: center;
+  outline: none;
+  font-weight: 700;
+}
+.system-ordemparanormal .op-threat2-sheet__divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.system-ordemparanormal .op-threat2-sheet__square {
+  font-size: 14px;
+}
+.system-ordemparanormal .op-threat2-sheet__combat {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+  padding: 6px 2px 0;
+  font-size: 11px;
+}
+.system-ordemparanormal .op-threat2-sheet__combat div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.system-ordemparanormal .op-threat2-sheet__combat input {
+  width: 30px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  text-align: center;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__presence {
+  border: 2px solid #111;
+  padding: 2px;
+}
+.system-ordemparanormal .op-threat2-sheet__presence-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #111;
+  color: #f4e8d8;
+  padding: 4px 8px;
+}
+.system-ordemparanormal .op-threat2-sheet__presence-header h3 {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+}
+.system-ordemparanormal .op-threat2-sheet__presence-header div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+}
+.system-ordemparanormal .op-threat2-sheet__presence-header input {
+  width: 54px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  text-align: right;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__presence-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px;
+  font-size: 11px;
+}
+.system-ordemparanormal .op-threat2-sheet__presence-body input {
+  width: 120px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__presence-body div:last-child input {
+  width: 50px;
+  text-align: center;
+}
+.system-ordemparanormal .op-threat2-sheet__right {
+  background: rgba(110, 140, 180, 0.1);
+  border-left: 2px dashed #aaa;
+  padding: 12px;
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.system-ordemparanormal .op-threat2-sheet__abilities p,
+.system-ordemparanormal .op-threat2-sheet__actions p {
+  margin: 0 0 6px;
+  font-size: 10px;
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+.system-ordemparanormal .op-threat2-sheet__abilities textarea,
+.system-ordemparanormal .op-threat2-sheet__actions textarea {
+  width: 100%;
+  min-height: 160px;
+  background: transparent;
+  border: none;
+  resize: none;
+  outline: none;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.system-ordemparanormal .op-threat2-sheet__actions textarea {
+  min-height: 200px;
+}
+.system-ordemparanormal .op-threat2-sheet__actions-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.system-ordemparanormal .op-threat2-sheet__actions-add {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+}
+.system-ordemparanormal .op-threat2-sheet__actions-add button {
+  background: #111;
+  color: #f4e8d8;
+  border: 1px solid #111;
+  font-size: 10px;
+  text-transform: uppercase;
+  padding: 2px 6px;
+}
+.system-ordemparanormal .op-threat2-sheet__actions-empty {
+  text-align: center;
+  font-size: 11px;
+  color: #777;
+  font-style: italic;
+  padding: 6px 0;
+}
+.system-ordemparanormal .op-threat2-sheet__separator {
+  border-top: 2px double #aaa;
+  margin: 8px 0;
+}
+.system-ordemparanormal .op-threat2-sheet__footer {
+  margin-top: 16px;
+  border-top: 1px solid #bbb;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  color: #666;
+}
+.system-ordemparanormal .op-threat2-sheet__footer input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+}
+.system-ordemparanormal .op-threat2-sheet__footer-note {
+  margin-left: auto;
+}
+@media (max-width: 900px) {
+  .system-ordemparanormal .op-threat2-sheet__description {
+    grid-template-columns: 1fr;
+  }
+  .system-ordemparanormal .op-threat2-sheet__description-side {
+    flex-direction: column;
+  }
+  .system-ordemparanormal .op-threat2-sheet__description-tag {
+    writing-mode: horizontal-tb;
+    border-left: none;
+    border-top: 2px dashed #aaa;
+    padding: 6px 0 0;
+    justify-content: center;
+  }
+  .system-ordemparanormal .op-threat2-sheet__grid {
+    grid-template-columns: 1fr;
+  }
+  .system-ordemparanormal .op-threat2-sheet__right {
+    min-height: 0;
+  }
 }
 
 /*# sourceMappingURL=ordemparanormal.css.map */
