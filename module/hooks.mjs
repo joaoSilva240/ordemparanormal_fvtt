@@ -8,24 +8,27 @@ export default function () {
 	 * Bar Brawl Gitlab: https://gitlab.com/woodentavern/foundryvtt-bar-brawl
 	 */
 	Hooks.on('preCreateActor', function (actor, data) {
+		const hasBarBrawl = game.modules?.get('barbrawl')?.active;
 		if (actor.type === 'threat') {
 			const prototypeToken = { disposition: -1, actorLink: false };
 			actor.updateSource({ prototypeToken }); // Set disposition to "Hostile"
-			actor.updateSource({
-				'prototypeToken.flags.barbrawl.resourceBars': {
-					'threatHPBar': {
-						id: 'threatHPBar',
-						mincolor: '#ff1a1a',
-						maxcolor: '#80ff00',
-						position: 'bottom-outer',
-						attribute: 'attributes.hp',
-						label: 'Pontos de Vida',
-						style: 'fraction',
-						ownerVisibility: CONST.TOKEN_DISPLAY_MODES.HOVER,
-        	otherVisibility: CONST.TOKEN_DISPLAY_MODES.NONE,
+			if (hasBarBrawl) {
+				actor.updateSource({
+					'prototypeToken.flags.barbrawl.resourceBars': {
+						'threatHPBar': {
+							id: 'threatHPBar',
+							mincolor: '#ff1a1a',
+							maxcolor: '#80ff00',
+							position: 'bottom-outer',
+							attribute: 'attributes.hp',
+							label: 'Pontos de Vida',
+							style: 'fraction',
+							ownerVisibility: CONST.TOKEN_DISPLAY_MODES.HOVER,
+							otherVisibility: CONST.TOKEN_DISPLAY_MODES.NONE,
+						},
 					},
-				},
-			});
+				});
+			}
 		}
 
 		// TODO: APLICAR UMA CONFIGURAÇÃO DE BAR BRAWL PARA PD E OUTRA PARA PE E SAN.
@@ -38,44 +41,46 @@ export default function () {
 		 * Adicionando configurações para todas as barras.
 		 * Criando uma barra extra com o módulo Bar Brawl (configuração para os Pontos de PE)
 		 */
-			actor.updateSource({
-				'prototypeToken.flags.barbrawl.resourceBars': {
-					'pv': {
-						id: 'pv',
-						mincolor: '#ff1a1a',
-						maxcolor: '#80ff00',
-						position: 'bottom-outer',
-						attribute: 'PV',
-						label: 'PV',
-						style: 'fraction',
-						ownerVisibility: CONST.TOKEN_DISPLAY_MODES.HOVER,
-        	otherVisibility: CONST.TOKEN_DISPLAY_MODES.NONE,
+			if (hasBarBrawl) {
+				actor.updateSource({
+					'prototypeToken.flags.barbrawl.resourceBars': {
+						'pv': {
+							id: 'pv',
+							mincolor: '#ff1a1a',
+							maxcolor: '#80ff00',
+							position: 'bottom-outer',
+							attribute: 'PV',
+							label: 'PV',
+							style: 'fraction',
+							ownerVisibility: CONST.TOKEN_DISPLAY_MODES.HOVER,
+							otherVisibility: CONST.TOKEN_DISPLAY_MODES.NONE,
 
+						},
+						'pe': {
+							id: 'pe',
+							mincolor: '#242899',
+							maxcolor: '#66a8ff',
+							position: 'bottom-outer',
+							attribute: 'PE',
+							label: 'PE',
+							style: 'fraction',
+							ownerVisibility: CONST.TOKEN_DISPLAY_MODES.HOVER,
+							otherVisibility: CONST.TOKEN_DISPLAY_MODES.NONE,
+						},
+						'san': {
+							id: 'san',
+							mincolor: '#000000',
+							maxcolor: '#000000',
+							position: 'bottom-outer',
+							attribute: 'SAN',
+							label: 'SAN',
+							style: 'fraction',
+							ownerVisibility: CONST.TOKEN_DISPLAY_MODES.HOVER,
+							otherVisibility: CONST.TOKEN_DISPLAY_MODES.NONE,
+						},
 					},
-					'pe': {
-						id: 'pe',
-						mincolor: '#242899',
-						maxcolor: '#66a8ff',
-						position: 'bottom-outer',
-						attribute: 'PE',
-						label: 'PE',
-						style: 'fraction',
-						ownerVisibility: CONST.TOKEN_DISPLAY_MODES.HOVER,
-        	otherVisibility: CONST.TOKEN_DISPLAY_MODES.NONE,
-					},
-					'san': {
-						id: 'san',
-						mincolor: '#000000',
-						maxcolor: '#000000',
-						position: 'bottom-outer',
-						attribute: 'SAN',
-						label: 'SAN',
-						style: 'fraction',
-						ownerVisibility: CONST.TOKEN_DISPLAY_MODES.HOVER,
-        	otherVisibility: CONST.TOKEN_DISPLAY_MODES.NONE,
-					},
-				},
-			});
+				});
+			}
 		}
 	});
 
