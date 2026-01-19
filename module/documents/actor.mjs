@@ -66,7 +66,7 @@ export class OrdemActor extends Actor {
 		const actorData = this;
 		const systemData = actorData.system;
 
-		if (actorData.type == 'agent') {
+		if (actorData.type == 'agent' || actorData.type == 'agent2') {
 			this._prepareDataStatus(actorData, systemData);
 			this._prepareRituals(actorData);
 			this._prepareBaseSkills(systemData);
@@ -90,7 +90,7 @@ export class OrdemActor extends Actor {
 
 		// Make separate methods for each Actor type (character, npc, etc.) to keep
 		// things organized.
-		if (actorData.type == 'agent') {
+		if (actorData.type == 'agent' || actorData.type == 'agent2') {
 			this._prepareItemsDerivedData(actorData, systemData);
 			this._prepareDefense(systemData);
 			this._prepareActorSpaces(actorData);

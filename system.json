@@ -272,18 +272,7 @@
       "path": "lang/pt-BR.json"
     }
   ],
-  "relationships": {
-    "requires": [
-      {
-        "id": "barbrawl",
-        "type": "module",
-        "manifest": "https://gitlab.com/woodentavern/foundryvtt-bar-brawl/-/raw/master/src/module.json",
-        "compatibility": {
-          "verified": "1.8.13"
-        }
-      }
-    ]
-  },
+  "relationships": {},
   "media": [
     {
       "type": "cover",
