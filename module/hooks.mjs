@@ -33,7 +33,7 @@ export default function () {
 
 		// TODO: APLICAR UMA CONFIGURAÇÃO DE BAR BRAWL PARA PD E OUTRA PARA PE E SAN.
 		// Filtrando por tipos de Actors disponíveis no sistema.
-		if (actor.type === 'agent') {
+		if (actor.type === 'agent' || actor.type === 'agent2') {
 			const prototypeToken = { disposition: 1, actorLink: true }; // Set disposition to "Friendly"
 			actor.updateSource({ prototypeToken });
 

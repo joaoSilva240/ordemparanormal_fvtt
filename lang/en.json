@@ -1,6 +1,7 @@
 {
 	"op.op": "Paranormal Order",
 	"TYPES.Actor.agent": "Agent",
+	"TYPES.Actor.agent2": "Agent 2",
 	"TYPES.Actor.threat": "Threat",
 
 	"TYPES.Item.protection": "Protection",
