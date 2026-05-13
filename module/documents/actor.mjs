@@ -126,7 +126,7 @@ export class OrdemActor extends Actor {
 	 * @param {*} system
 	 */
 	_prepareDataStatus(actorData, system) {
-		const VIG = system.attributes.vit.value;
+		const VIG = system.attributes.vig.value;
 		const PRE = system.attributes.pre.value;
 
 		const progress = this.progressCalculation(system);
@@ -140,28 +140,33 @@ export class OrdemActor extends Actor {
 			system.PV.max = 20 + VIG + (progressIf && progressAdjust * (4 + VIG));
 			system.SAN.max = 12 + (progressIf && progressAdjust * 3);
 
-			if (this.usingWithoutSanityRule) system.PD.max = 6 + PRE + (progressIf && progressAdjust * (3 + PRE));
+			// Regra "Sem Sanidade" (PD): PD inicial = base + PRE, ganho por progresso = valor fixo (não multiplicado por PRE novamente)
+			// Combatente: 6 + PRE inicial, +3 + PRE a cada NEX
+			if (this.usingWithoutSanityRule) system.PD.max = (6 + PRE) + (progressIf && progressAdjust * (3 + PRE));
 			else system.PE.max = 2 + PRE + (progressIf && progressAdjust * (2 + PRE));
 			break;
 		case 'specialist':
 			system.PV.max = 16 + VIG + (progressIf && progressAdjust * (3 + VIG));
 			system.SAN.max = 16 + (progressIf && progressAdjust * 4);
 
-			if (this.usingWithoutSanityRule) system.PD.max = 8 + PRE + (progressIf && progressAdjust * (4 + PRE));
+			// Especialista: 8 + PRE inicial, +4 + PRE a cada NEX
+			if (this.usingWithoutSanityRule) system.PD.max = (8 + PRE) + (progressIf && progressAdjust * (4 + PRE));
 			else system.PE.max = 3 + PRE + (progressIf && progressAdjust * (3 + PRE));
 			break;
 		case 'occultist':
 			system.PV.max = 12 + VIG + (progressIf && progressAdjust * (2 + VIG));
 			system.SAN.max = 20 + (progressIf && progressAdjust * 5);
 
-			if (this.usingWithoutSanityRule) system.PD.max = 10 + PRE + (progressIf && progressAdjust * (5 + PRE));
+			// Ocultista: 10 + PRE inicial, +5 + PRE a cada NEX
+			if (this.usingWithoutSanityRule) system.PD.max = (10 + PRE) + (progressIf && progressAdjust * (5 + PRE));
 			else system.PE.max = 4 + PRE + (progressIf && progressAdjust * (4 + PRE));
 			break;
 		case 'survivor':
 			system.PV.max = 8 + VIG + (progressIf && progressAdjust * 2);
 			system.SAN.max = 8 + (progressIf && progressAdjust * 2);
 
-			if (this.usingWithoutSanityRule) system.PD.max = 4 + PRE + (progressIf && progressAdjust * (2));
+			// Sobrevivente: 4 + PRE inicial, +2 fixo por estágio (não depende de PRE)
+			if (this.usingWithoutSanityRule) system.PD.max = (4 + PRE) + (progressIf && progressAdjust * 2);
 			else system.PE.max = 2 + PRE + (progressIf && progressAdjust * 1);
 			break;
 		default:
@@ -178,8 +183,11 @@ export class OrdemActor extends Actor {
 	 */
 	_prepareDefense(system) {
 		const REFLEXES = system.skills.reflexes;
-		const AGI = system.attributes.dex.value;
+		const AGI = system.attributes.agi.value;
 		system.defense.value += AGI;
+		// TODO: Esquiva deve usar o resultado do teste de Reflexos, não somar o grau de treinamento.
+		// Regra: "Esquiva (Reação): Você pode gastar 2 PE para fazer um teste de Reflexos. O resultado substitui sua Defesa contra um ataque."
+		// Isso requer mudanças no sistema de rolagem para implementar corretamente.
 		system.defense.dodge = system.defense.value + system.skills.reflexes.degree.value + (system.skills.reflexes.mod || 0);
 	}
 
@@ -241,7 +249,7 @@ export class OrdemActor extends Actor {
 	_prepareActorSpaces(ActorData) {
 		const system = ActorData.system;
 		const spaces = (system.spaces ??= {});
-		const FOR = system.attributes.str.value || 0;
+		const FOR = system.attributes.for.value || 0;
 		spaces.over, (spaces.pctMax = 0);
 
 		// Get the total weight from items
@@ -255,7 +263,8 @@ export class OrdemActor extends Actor {
 
 		// Populate the final values
 		spaces.value = weight.toNearest(0.1);
-		spaces.max = FOR !== 0 ? FOR * 5 : 2;
+		// Regra: Limite de espaços/carga = 5 + Vigor (VIG)
+		spaces.max = 5 + VIG;
 
 		// Plus bonus
 		spaces.value += spaces.bonus.value;
@@ -331,17 +340,16 @@ export class OrdemActor extends Actor {
 	}
 
 	/**
-	 *
+	 * Calcula a DT (Dificuldade de Teste) dos rituais.
+	 * Regra: DT = 10 + bônus de Ocultismo + PRE
+	 * Bônus de Ocultismo: Treinado = +5, Veterano = +10, Expert = +15
 	 */
 	_prepareRituals(ActorData) {
 		const system = ActorData.system;
 		const ritual = (system.ritual ??= {});
-		const calcNEX = system.NEX.value < 99 ? Math.floor(system.NEX.value / 5) : 20;
-		if (!this.isSurvivor) {
-			ritual.DT = 10 + calcNEX + system.attributes.pre.value;
-		} else {
-			ritual.DT = 10 + system.attributes.pre.value;
-		}
+		// Usar o bônus de Ocultismo (degree.value) em vez de NEX
+		const occultismBonus = system.skills.occultism?.degree?.value || 0;
+		ritual.DT = 10 + occultismBonus + system.attributes.pre.value;
 	}
 
 	/**
@@ -425,7 +433,7 @@ export class OrdemActor extends Actor {
 			// prof: ability?.[`${type}Prof`].hasProficiency ? ability[`${type}Prof`].term : null,
 			// [`${config.ability}${type.capitalize()}Bonus`]: ability?.bonuses[type],
 			// [`${type}Bonus`]: this.system.bonuses?.abilities?.[type],
-			// cover: (config.ability === 'dex') && (type === 'save') ? this.system.attributes?.ac?.cover : null
+			// cover: (config.ability === 'agi') && (type === 'save') ? this.system.attributes?.ac?.cover : null
 		}, rollData);
 		const options = {};
 

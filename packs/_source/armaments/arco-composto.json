@@ -27,13 +27,13 @@
     "formulas": {
       "attack": {
         "formula": "1d4",
-        "attr": "dex",
+        "attr": "agi",
         "skill": "aim",
         "bonus": ""
       },
       "damage": {
         "formula": "1d10",
-        "attr": "str",
+        "attr": "for",
         "bonus": "",
         "type": "piercingDamage",
         "parts": []

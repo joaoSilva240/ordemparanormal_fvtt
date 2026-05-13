@@ -103,21 +103,17 @@
 		"freeSkill": "Free Skill"
 	},
 
-	"op.attDex": "Dexterity",
+	"op.attAgi": "Agility",
 	"op.attInt": "Intelligence",
-	"op.attVit": "Vitality",
+	"op.attVig": "Vigor",
 	"op.attPre": "Presence",
-	"op.attStr": "Strength",
+	"op.attFor": "Strength",
 
-	"op.dexAbv": "Dex",
+	"op.agiAbv": "Agi",
 	"op.intAbv": "Int",
-	"op.vitAbv": "Vit",
+	"op.vigAbv": "Vig",
 	"op.preAbv": "Pre",
-	"op.strAbv": "Str",
-
-	"op.agiAbv": "Dex",
-	"op.vigAbv": "Vit",
-	"op.forAbv": "Str",
+	"op.forAbv": "For",
 
 	"op.newItem": "Novo(a)",
 

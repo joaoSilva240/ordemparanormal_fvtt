@@ -110,20 +110,16 @@
 		"freeSkill": "Perícia Livre"
 	},
 
-	"op.attDex": "Agilidade",
+	"op.attAgi": "Agilidade",
 	"op.attInt": "Inteligência",
-	"op.attVit": "Vigor",
+	"op.attVig": "Vigor",
 	"op.attPre": "Presença",
-	"op.attStr": "Força",
-
-	"op.dexAbv": "Agi",
-	"op.intAbv": "Int",
-	"op.vitAbv": "Vig",
-	"op.preAbv": "Pre",
-	"op.strAbv": "For",
+	"op.attFor": "Força",
 
 	"op.agiAbv": "Agi",
+	"op.intAbv": "Int",
 	"op.vigAbv": "Vig",
+	"op.preAbv": "Pre",
 	"op.forAbv": "For",
 
 	"op.newItem": "Novo(a)",

@@ -22,11 +22,11 @@ op.base = {
  * @type {Object}
  */
 op.attributes = {
-	dex: 'op.attDex',
+	agi: 'op.attAgi',
 	int: 'op.attInt',
-	vit: 'op.attVit',
+	vig: 'op.attVig',
 	pre: 'op.attPre',
-	str: 'op.attStr',
+	for: 'op.attFor',
 };
 
 /**

@@ -27,7 +27,7 @@
     "formulas": {
       "attack": {
         "formula": "1d4",
-        "attr": "dex",
+        "attr": "agi",
         "skill": "fighting",
         "bonus": ""
       },
