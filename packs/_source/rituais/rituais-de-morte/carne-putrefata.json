@@ -25,7 +25,11 @@
     "resistance": "",
     "studentForm": true,
     "trueForm": true,
-    "targetQtd": ""
+    "targetQtd": "",
+    "damage": {
+      "formula": "1d4",
+      "type": "death"
+    }
   },
   "effects": [],
   "folder": "cGgAlvSPnBFYfMHL",
@@ -40,7 +44,7 @@
     "systemVersion": "7.2.4",
     "coreVersion": "12.331",
     "createdTime": 1747243200000,
-    "modifiedTime": 1778779219095,
+    "modifiedTime": 1778782389757,
     "lastModifiedBy": "D087Zkcpssj33iAO"
   },
   "_key": "!items!8Kx2TddXu1sgkRKD"

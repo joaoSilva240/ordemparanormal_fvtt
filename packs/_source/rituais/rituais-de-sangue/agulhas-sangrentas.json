@@ -26,7 +26,11 @@
     "studentForm": true,
     "trueForm": true,
     "skillResis": "reflexes",
-    "targetQtd": "1"
+    "targetQtd": "1",
+    "damage": {
+      "formula": "3d4+3",
+      "type": "cuttingDamage"
+    }
   },
   "effects": [],
   "folder": "SS5t5i0IayvkgoVF",
@@ -41,7 +45,7 @@
     "systemVersion": "7.2.4",
     "coreVersion": "12.331",
     "createdTime": 1747243200000,
-    "modifiedTime": 1778779192302,
+    "modifiedTime": 1778782389717,
     "lastModifiedBy": "D087Zkcpssj33iAO"
   },
   "_key": "!items!YH4zjcnXtykDVarb"

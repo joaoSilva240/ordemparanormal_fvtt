@@ -25,7 +25,11 @@
     "resistance": "",
     "studentForm": false,
     "trueForm": true,
-    "targetQtd": "1"
+    "targetQtd": "1",
+    "damage": {
+      "formula": "",
+      "type": ""
+    }
   },
   "effects": [],
   "folder": "HsgK7qH3wpZkmUcX",
@@ -40,7 +44,7 @@
     "systemVersion": "7.2.4",
     "coreVersion": "12.331",
     "createdTime": 1747243200000,
-    "modifiedTime": 1778779192333,
+    "modifiedTime": 1778782389787,
     "lastModifiedBy": "D087Zkcpssj33iAO"
   },
   "_key": "!items!7IXp5EkqGafq1vJc"

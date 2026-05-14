@@ -26,7 +26,11 @@
     "studentForm": true,
     "trueForm": true,
     "skillResis": "will",
-    "targetQtd": "1"
+    "targetQtd": "1",
+    "damage": {
+      "formula": "2d6+2",
+      "type": "knowledge"
+    }
   },
   "effects": [],
   "folder": "eMAtlS5v4gXg6bgF",
@@ -41,7 +45,7 @@
     "systemVersion": "7.2.4",
     "coreVersion": "12.331",
     "createdTime": 1747243200000,
-    "modifiedTime": 1778779192326,
+    "modifiedTime": 1778782389766,
     "lastModifiedBy": "D087Zkcpssj33iAO"
   },
   "_key": "!items!nHAodaJ72iFN54Zf"

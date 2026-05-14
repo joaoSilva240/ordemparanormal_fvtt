@@ -58,6 +58,15 @@
 				</select>
 				{{/if}}
 			</div>
+			{{!-- Damage Formula --}}
+			<label class="resource-label">{{localize "op.damage"}}</label>
+			<div>
+				<input type="text" name="system.damage.formula" value="{{system.damage.formula}}"
+					data-dtype="String" placeholder="Ex: 3d4+3" style="width: 120px;"/>
+				<select name="system.damage.type" data-dtype="String">
+					{{ selectOptions optionDamageTypes selected=system.damage.type localize=true blank="—" }}
+				</select>
+			</div>
 		</div>
 		<div class="resource grid grid-2col align-items-center">
 			<label class="resource-label">{{localize "op.studentForm"}}</label>

@@ -415,6 +415,7 @@
 	"op.damage": "Dano",
 	"op.rollDmg": "Rolar Dano",
 	"op.rollAtk": "Rolar Ataque",
+	"op.ritualSaveLabel": "Resistir (DT {dt})",
 
 	"op.Advantage": "Vantagem (+1d20)",
 	"op.Normal": "Lançar Dados",

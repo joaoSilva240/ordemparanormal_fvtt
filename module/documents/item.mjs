@@ -113,6 +113,12 @@ export class OrdemItem extends Item {
 			case 'teste':
 				console.log('teste');
 				break;
+			case 'ritualSave':
+				await item.rollRitualSave({ event });
+				break;
+			case 'ritualDamage':
+				await item.rollRitualDamage({ event });
+				break;
 			//   case 'save':
 			// 	targets = this._getChatCardTargets(card);
 			// 	for ( const token of targets ) {
@@ -460,6 +466,9 @@ export class OrdemItem extends Item {
 					templateData.i18n.areaLabel = game.i18n.format('op.areaLabelCubeLine', area);
 				}
 			}
+			// Expose the actor's ritual DT for the save button
+			const actorDT = this.actor?.system?.ritual?.DT || 0;
+			templateData.i18n.saveLabel = game.i18n.format('op.ritualSaveLabel', {dt: actorDT});
 		}
 
 		const html = await renderTemplate('systems/ordemparanormal/templates/chat/item-card.html', templateData);
@@ -498,6 +507,104 @@ export class OrdemItem extends Item {
 
 		// 	// return roll;
 		// }
+	}
+
+	/**
+	 * Roll a ritual's resistance save (for the target against the caster's DT).
+	 * @param {object} [options]  Options for the roll.
+	 * @returns {Promise<Roll>}   The created Roll instance.
+	 */
+	async rollRitualSave(options = {}) {
+		if (!this.system.skillResis) throw new Error('This ritual does not have a resistance skill!');
+		if (!this.actor) throw new Error('This ritual is not owned by an actor!');
+
+		const skillKey = this.system.skillResis;
+		const skill = this.actor.system.skills[skillKey];
+		const dt = this.actor.system.ritual?.DT || 0;
+
+		if (!skill) throw new Error('Skill ' + skillKey + ' not found on actor!');
+
+		const { parts, data } = CONFIG.Dice.BasicRoll.constructParts({
+			degree: skill.degree.value || null,
+			bonus: skill.value || null,
+			modifier: skill.mod || null,
+		});
+
+		const rollConfig = {
+			parts: (parts ?? []).join(' + '),
+			formula: `1d20`,
+			data: this.getRollData(),
+			chatMessage: true,
+		};
+
+		if (parts && parts.length > 0) {
+			rollConfig.formula = ['1d20'].concat(parts ?? []).join(' + ');
+		}
+		rollConfig.data = { ...(rollConfig.data ?? {}), ...data };
+
+		const roll = await new Roll(rollConfig.formula, rollConfig.data).roll({ async: true });
+
+		const skillLabel = game.i18n.localize('op.skill.' + skillKey);
+		const flavor = `${skillLabel} &mdash; ${this.name}<br><strong>DT ${dt}</strong>`;
+
+		if (rollConfig.chatMessage) {
+			roll.toMessage({
+				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+				flavor: flavor,
+				rollMode: game.settings.get('core', 'rollMode'),
+			});
+		}
+
+		Hooks.callAll('ordemparanormal.rollFormula', this, roll);
+		return roll;
+	}
+
+	/**
+	 * Roll a ritual's damage (if it has a damage formula).
+	 * @param {object} [options]  Options for the roll.
+	 * @returns {Promise<Roll>}   The created Roll instance.
+	 */
+	async rollRitualDamage(options = {}) {
+		if (!this.system.damage?.formula) throw new Error('This ritual does not have a damage formula!');
+
+		const damage = this.system.damage;
+		const prepareFormula = [damage.formula];
+		const damageTypes = [];
+
+		if (damage.type) {
+			// Try to localize as damage type abbreviation first, then element
+			let typeLabel = game.i18n.localize('op.damageTypeAbv.' + damage.type);
+			// If the localization returns the key itself (not found), try element
+			if (typeLabel === 'op.damageTypeAbv.' + damage.type) {
+				typeLabel = game.i18n.localize('op.elementChoices.' + damage.type);
+			}
+			damageTypes.push(typeLabel);
+		}
+
+		const formulas = prepareFormula.join('+');
+		const types = damageTypes.length > 0 ? damageTypes.join(' + ') : '';
+
+		const rollConfig = {
+			formula: formulas,
+			data: this.getRollData(),
+			chatMessage: true,
+		};
+
+		const roll = await new Roll(rollConfig.formula, rollConfig.data).roll({ async: true });
+
+		let flavor = `Dano de ${this.name}`;
+		if (types) flavor += ` (${types})`;
+
+		if (rollConfig.chatMessage) {
+			roll.toMessage({
+				speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+				flavor: flavor,
+				rollMode: game.settings.get('core', 'rollMode'),
+			});
+		}
+
+		Hooks.callAll('ordemparanormal.rollFormula', this, roll);
+		return roll;
 	}
 
 	/**

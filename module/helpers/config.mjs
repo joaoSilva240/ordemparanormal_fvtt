@@ -375,3 +375,33 @@ op.dropdownElement = {
 	energy: 'op.elementChoices.energy',
 	fear: 'op.elementChoices.fear',
 };
+
+/**
+ * Extended damage types for rituals (physical + elemental).
+ * @type {Object}
+ */
+op.dropdownDamageTypes = {
+	cuttingDamage: 'op.damageTypeChoices.cuttingDamage',
+	impactDamage: 'op.damageTypeChoices.impactDamage',
+	piercingDamage: 'op.damageTypeChoices.piercingDamage',
+	ballisticDamage: 'op.damageTypeChoices.ballisticDamage',
+	blood: 'op.elementChoices.blood',
+	death: 'op.elementChoices.death',
+	knowledge: 'op.elementChoices.knowledge',
+	energy: 'op.elementChoices.energy',
+};
+
+/**
+ * Damage type abbreviations (physical + elemental).
+ * @type {Object}
+ */
+op.damageTypeAbv = {
+	cuttingDamage: 'Corte',
+	impactDamage: 'Impacto',
+	piercingDamage: 'Perfurante',
+	ballisticDamage: 'Balístico',
+	blood: 'Sangue',
+	death: 'Morte',
+	knowledge: 'Conhecimento',
+	energy: 'Energia',
+};

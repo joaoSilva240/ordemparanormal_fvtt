@@ -26,7 +26,11 @@
     "studentForm": false,
     "trueForm": true,
     "targetQtd": "1",
-    "skillResis": "resilience"
+    "skillResis": "resilience",
+    "damage": {
+      "formula": "",
+      "type": ""
+    }
   },
   "effects": [],
   "folder": "cGgAlvSPnBFYfMHL",
@@ -41,7 +45,7 @@
     "systemVersion": "7.2.4",
     "coreVersion": "12.331",
     "createdTime": 1747243200000,
-    "modifiedTime": 1778780564693,
+    "modifiedTime": 1778782389764,
     "lastModifiedBy": "D087Zkcpssj33iAO"
   },
   "_key": "!items!WVjaleWZtHI3LloN"

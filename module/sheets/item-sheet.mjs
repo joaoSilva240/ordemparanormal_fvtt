@@ -122,6 +122,7 @@ export class OrdemItemSheet extends api.HandlebarsApplicationMixin(sheets.ItemSh
 			attackSkills: CONFIG.op.attackSkills,
 			// Ritual's Dropdowns
 			optionExecution: CONFIG.op.dropdownExecution,
+			optionDamageTypes: CONFIG.op.dropdownDamageTypes,
 			// Item's Radiobox
 			categories: CONFIG.op.categories,
 			degree: CONFIG.op.ritualDegree,

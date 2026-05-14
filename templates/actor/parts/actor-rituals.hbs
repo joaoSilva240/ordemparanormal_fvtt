@@ -64,7 +64,16 @@
 			{{else}} — {{/if}}
 		</div>
 		<div class="item-controls">
-			{{!-- <a class="item-control" data-action="onSendChat" title="Enviar para o chat"><i class="fas fa-message"></i></a> --}}
+			{{#if item.system.skillResis}}
+			<a class="item-control ritual-save" data-action="ritualSave" title="Resistência (DT {{@root.system.ritual.DT}})">
+				<i class="fa-solid fa-shield"></i>
+			</a>
+			{{/if}}
+			{{#if item.system.damage.formula}}
+			<a class="item-control ritual-damage" data-action="ritualDamage" title="Rolar Dano">
+				<i class="fa-solid fa-dice"></i>
+			</a>
+			{{/if}}
 			<a class="item-control item-edit" data-action="viewDoc" title="Edit Item"><i class="fas fa-edit"></i></a>
 			<a class="item-control" data-action="deleteDoc" title="Delete Item"><i class="fas fa-trash"></i></a>
 		</div>
