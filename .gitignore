@@ -21,3 +21,6 @@ packs/pathSpecialist
 *.map
 packs/createmissionptbr
 packs/generalptbr
+
+# DOCS
+docs/
