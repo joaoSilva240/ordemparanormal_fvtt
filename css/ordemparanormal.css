@@ -1867,8 +1867,7 @@ dialog.ordemparanormal.application {
   width: calc(100% / 0.85);
 }
 .system-ordemparanormal .op-agent2-sheet__header {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
   gap: 16px;
   border-bottom: 3px solid #111;
@@ -1896,6 +1895,7 @@ dialog.ordemparanormal.application {
   display: block;
 }
 .system-ordemparanormal .op-agent2-sheet__field {
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -1945,10 +1945,10 @@ dialog.ordemparanormal.application {
   transform: translate(-50%, -50%);
   background: #1a1a1a;
   color: #f4e8d8;
-  padding: 6px 10px;
+  padding: 10px;
   border-radius: 50%;
-  width: 92px;
-  height: 92px;
+  width: 200px;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2135,11 +2135,32 @@ dialog.ordemparanormal.application {
   text-align: left;
   font-weight: 700;
 }
+.system-ordemparanormal .op-agent2-sheet__attacks-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+.system-ordemparanormal .op-agent2-sheet__attacks-controls {
+  display: flex;
+  gap: 6px;
+  font-size: 12px;
+}
 .system-ordemparanormal .op-agent2-sheet__attacks-empty {
   padding: 8px;
   text-align: center;
   font-style: italic;
   color: #666;
+}
+.system-ordemparanormal .op-agent2-sheet__ritual-dt {
+  margin-bottom: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #222;
+}
+.system-ordemparanormal .op-agent2-sheet__ritual-dt span {
+  font-weight: 700;
 }
 .system-ordemparanormal .op-agent2-sheet__skills-header {
   background: #111;
@@ -2180,13 +2201,12 @@ dialog.ordemparanormal.application {
 }
 .system-ordemparanormal .op-agent2-sheet__skill-training {
   display: flex;
-  gap: 4px;
+  gap: 2px;
   justify-content: center;
 }
 .system-ordemparanormal .op-agent2-sheet__skill-training button {
   width: 12px;
   height: 12px;
-  border-radius: 50%;
   border: 1px solid #111;
   background: transparent;
 }
@@ -2213,6 +2233,93 @@ dialog.ordemparanormal.application {
   text-align: center;
   font-size: 10px;
   color: #666;
+}
+.system-ordemparanormal .op-agent2-sheet__tab-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.system-ordemparanormal .op-agent2-sheet__tabs {
+  position: absolute;
+    top: 5px;
+    right: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    z-index: 2
+}
+.system-ordemparanormal .op-agent2-sheet__tab {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #111;
+  background: #111;
+  color: #f4e8d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.system-ordemparanormal .op-agent2-sheet__tab i {
+  font-size: 14px;
+}
+.system-ordemparanormal #op-agent2-tab-main:checked ~ .op-agent2-sheet__tabs label[for=op-agent2-tab-main],
+.system-ordemparanormal #op-agent2-tab-extra:checked ~ .op-agent2-sheet__tabs label[for=op-agent2-tab-extra] {
+  background: #f4e8d8;
+  color: #111;
+}
+.system-ordemparanormal .op-agent2-sheet__pages {
+  margin-top: 6px;
+}
+.system-ordemparanormal .op-agent2-sheet__page {
+  display: none;
+}
+.system-ordemparanormal #op-agent2-tab-main:checked ~ .op-agent2-sheet__pages .op-agent2-sheet__page--main {
+  display: block;
+}
+.system-ordemparanormal #op-agent2-tab-extra:checked ~ .op-agent2-sheet__pages .op-agent2-sheet__page--extra {
+  display: block;
+}
+.system-ordemparanormal .op-agent2-sheet__page-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.system-ordemparanormal .op-agent2-sheet__page-section {
+  border: 2px solid #111;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 8px;
+}
+.system-ordemparanormal .op-agent2-sheet__page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  color: #f4e8d8;
+  padding: 4px 6px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.system-ordemparanormal .op-agent2-sheet__page-header h3 {
+  margin: 0;
+  font-size: 12px;
+}
+.system-ordemparanormal .op-agent2-sheet__page-body {
+  padding: 6px 2px 0;
+}
+.system-ordemparanormal .op-agent2-sheet__page-body .items-list {
+  max-height: 220px;
+}
+.system-ordemparanormal .op-agent2-sheet__subsection {
+  margin-bottom: 8px;
+}
+.system-ordemparanormal .op-agent2-sheet__subheader {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #222;
 }
 .system-ordemparanormal .op-threat2-sheet {
   position: relative;

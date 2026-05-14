@@ -28,7 +28,9 @@ export class OrdemThreat2Sheet extends api.HandlebarsApplicationMixin(sheets.Act
 			viewDoc: this._viewDoc,
 			createDoc: this._createDoc,
 			deleteDoc: this._deleteDoc,
-			onRoll: this.#onRoll
+			onRoll: this.#onRoll,
+			onRollAttributeTest: this.#onRollAttributeTest,
+			onRollFormula: this.#onRollFormula
 		},
 		dragDrop: [{ dragSelector: '[data-drag]', dropSelector: null }],
 	};
@@ -129,6 +131,37 @@ export class OrdemThreat2Sheet extends api.HandlebarsApplicationMixin(sheets.Act
 				if (item) return item.roll();
 			}
 		}
+	}
+
+	static #onRollAttributeTest(event, target) {
+		event.preventDefault();
+		const attribute = target.closest('[data-key]').dataset.key;
+		this.actor.rollAttribute({ attribute, event });
+	}
+
+	static async #onRollFormula(event, target) {
+		event.preventDefault();
+		const basePath = target.dataset.basePath;
+		const modPath = target.dataset.modPath;
+		const rollPath = target.dataset.rollPath;
+		const rollData = this.actor.getRollData();
+		let formula = target.dataset.roll || target.value;
+
+		if (basePath && modPath) {
+			const base = foundry.utils.getProperty(this.actor, basePath) ?? 0;
+			const mod = foundry.utils.getProperty(this.actor, modPath) ?? 0;
+			formula = `1d20 + ${base} + ${mod}`;
+		} else if (rollPath) {
+			formula = foundry.utils.getProperty(this.actor, rollPath);
+		}
+
+		if (!formula) return;
+		const roll = await new Roll(formula, rollData).roll({ async: true });
+		return roll.toMessage({
+			speaker: ChatMessage.getSpeaker({ actor: this.actor }),
+			flavor: target.dataset.label ?? this.actor.name,
+			rollMode: game.settings.get('core', 'rollMode'),
+		});
 	}
 
 	_getEmbeddedDocument(target) {

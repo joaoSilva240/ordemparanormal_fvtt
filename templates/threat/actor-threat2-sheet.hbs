@@ -1,22 +1,6 @@
 <section class="{{actor.type}} op-threat2-sheet" id="threat2" autocomplete="off">
 	<div class="op-threat2-sheet__noise"></div>
 	<div class="op-threat2-sheet__container">
-		<header class="op-threat2-sheet__header">
-			<input
-				type="text"
-				name="name"
-				value="{{actor.name}}"
-				placeholder="NOME DA CRIATURA"
-				class="op-threat2-sheet__name"
-			/>
-			<div class="op-threat2-sheet__logo">
-				<span>ORDEM</span>
-				<span>PARANORMAL</span>
-			</div>
-		</header>
-
-		
-
 		<div class="op-threat2-sheet__grid">
 			<div class="op-threat2-sheet__left">
 				<div class="op-threat2-sheet__badge">
@@ -59,18 +43,18 @@
 				<div class="op-threat2-sheet__section">
 					<div class="op-threat2-sheet__section-title">ATRIBUTOS</div>
 					<div class="op-threat2-sheet__attributes">
-						<div class="op-threat2-sheet__attr">
-							<span>AGI</span>
-							<div class="op-threat2-sheet__hex">
-								<input type="number" name="system.attributes.dex.value" value="{{system.attributes.dex.value}}" data-dtype="Number" />
-							</div>
+					<div class="op-threat2-sheet__attr">
+						<span>AGI</span>
+						<div class="op-threat2-sheet__hex">
+							<input type="number" name="system.attributes.agi.value" value="{{system.attributes.agi.value}}" data-dtype="Number" />
 						</div>
-						<div class="op-threat2-sheet__attr">
-							<span>FOR</span>
-							<div class="op-threat2-sheet__hex">
-								<input type="number" name="system.attributes.str.value" value="{{system.attributes.str.value}}" data-dtype="Number" />
-							</div>
+					</div>
+					<div class="op-threat2-sheet__attr">
+						<span>FOR</span>
+						<div class="op-threat2-sheet__hex">
+							<input type="number" name="system.attributes.for.value" value="{{system.attributes.for.value}}" data-dtype="Number" />
 						</div>
+					</div>
 						<div class="op-threat2-sheet__attr">
 							<span>INT</span>
 							<div class="op-threat2-sheet__hex">
@@ -83,12 +67,12 @@
 								<input type="number" name="system.attributes.pre.value" value="{{system.attributes.pre.value}}" data-dtype="Number" />
 							</div>
 						</div>
-						<div class="op-threat2-sheet__attr">
-							<span>VIG</span>
-							<div class="op-threat2-sheet__hex">
-								<input type="number" name="system.attributes.vit.value" value="{{system.attributes.vit.value}}" data-dtype="Number" />
-							</div>
+					<div class="op-threat2-sheet__attr">
+						<span>VIG</span>
+						<div class="op-threat2-sheet__hex">
+							<input type="number" name="system.attributes.vig.value" value="{{system.attributes.vig.value}}" data-dtype="Number" />
 						</div>
+					</div>
 					</div>
 				</div>
 
@@ -118,7 +102,7 @@
 						<input type="number" name="system.defense.value" value="{{system.defense.value}}" data-dtype="Number" />
 					</div>
 					<div class="op-threat2-sheet__defenses-row">
-						<span>FORTITUDE</span>
+						<span class="rollable" data-action="onRollFormula" data-base-path="system.defense.fortitude.base" data-mod-path="system.defense.fortitude.mod" data-label="Fortitude">FORTITUDE</span>
 						<div>
 							<input type="number" name="system.defense.fortitude.base" value="{{system.defense.fortitude.base}}" data-dtype="Number" />
 							<span>d20 +</span>
@@ -126,7 +110,7 @@
 						</div>
 					</div>
 					<div class="op-threat2-sheet__defenses-row">
-						<span>REFLEXOS</span>
+						<span class="rollable" data-action="onRollFormula" data-base-path="system.defense.reflex.base" data-mod-path="system.defense.reflex.mod" data-label="Reflexos">REFLEXOS</span>
 						<div>
 							<input type="number" name="system.defense.reflex.base" value="{{system.defense.reflex.base}}" data-dtype="Number" />
 							<span>d20 +</span>
@@ -134,7 +118,7 @@
 						</div>
 					</div>
 					<div class="op-threat2-sheet__defenses-row">
-						<span>VONTADE</span>
+						<span class="rollable" data-action="onRollFormula" data-base-path="system.defense.will.base" data-mod-path="system.defense.will.mod" data-label="Vontade">VONTADE</span>
 						<div>
 							<input type="number" name="system.defense.will.base" value="{{system.defense.will.base}}" data-dtype="Number" />
 							<span>d20 +</span>
@@ -162,7 +146,7 @@
 					<div class="op-threat2-sheet__section-title">COMBATE</div>
 					<div class="op-threat2-sheet__combat">
 						<div>
-							<span>Percepcao</span>
+							<span class="rollable" data-action="onRollFormula" data-base-path="system.perception.base" data-mod-path="system.perception.mod" data-label="Percepcao">Percepcao</span>
 							<div>
 								<input type="number" name="system.perception.base" value="{{system.perception.base}}" data-dtype="Number" placeholder="0" />
 								<span>d20 +</span>
@@ -170,7 +154,7 @@
 							</div>
 						</div>
 						<div>
-							<span>Iniciativa</span>
+							<span class="rollable" data-action="onRollFormula" data-base-path="system.initiative.base" data-mod-path="system.initiative.mod" data-label="Iniciativa">Iniciativa</span>
 							<div>
 								<input type="number" name="system.initiative.base" value="{{system.initiative.base}}" data-dtype="Number" placeholder="0" />
 								<span>d20 +</span>
@@ -185,17 +169,17 @@
 						<h3>PRESENCA PERTURBADORA</h3>
 						<div>
 							<span>NEX</span>
-							<input type="text" name="system.disturbingPresence.immuneNex" value="{{system.disturbingPresence.immuneNex}}" placeholder="000%" />
+							<input type="text" name="system.disturbingPresence.immuneNex" value="{{system.disturbingPresence.immuneNex}}" placeholder="15%" />
 						</div>
 					</div>
 					<div class="op-threat2-sheet__presence-body">
 						<div>
-							<span>DANO</span>
-							<input type="text" name="system.disturbingPresence.mentalDamage" value="{{system.disturbingPresence.mentalDamage}}" placeholder="00d00 mental" />
+							<span class="rollable" data-action="onRollFormula" data-roll-path="system.disturbingPresence.mentalDamage" data-label="Presenca Perturbadora">DANO</span>
+							<input type="text" name="system.disturbingPresence.mentalDamage" value="{{system.disturbingPresence.mentalDamage}}" placeholder="1d6 mental" />
 						</div>
 						<div>
 							<span>RESISTENCIA DT</span>
-							<input type="text" name="system.disturbingPresence.dt" value="{{system.disturbingPresence.dt}}" placeholder="000" />
+							<input type="text" name="system.disturbingPresence.dt" value="{{system.disturbingPresence.dt}}" placeholder="10" />
 						</div>
 					</div>
 				</div>
@@ -245,11 +229,5 @@
 			</div>
 			</div>
 		</div>
-
-		<footer class="op-threat2-sheet__footer">
-			<span>Criatura criada por</span>
-			<input type="text" name="system.details.creator" value="{{system.details.creator}}" placeholder="Nome do criador" />
-			<span class="op-threat2-sheet__footer-note">Ficha criada por Magic Patterns</span>
-		</footer>
 	</div>
 </section>

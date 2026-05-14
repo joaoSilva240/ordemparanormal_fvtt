@@ -75,7 +75,7 @@
 				"acrobatics": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -120,7 +120,7 @@
 				"athleticism": {
 					"value": 0,
 					"attr": [
-						"str",
+						"for",
 						1
 					],
 					"degree": {
@@ -165,7 +165,7 @@
 				"crime": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -210,7 +210,7 @@
 				"resilience": {
 					"value": 0,
 					"attr": [
-						"vit",
+						"vig",
 						1
 					],
 					"degree": {
@@ -225,7 +225,7 @@
 				"stealth": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -240,7 +240,7 @@
 				"initiative": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -300,7 +300,7 @@
 				"fighting": {
 					"value": 0,
 					"attr": [
-						"str",
+						"for",
 						1
 					],
 					"degree": {
@@ -360,7 +360,7 @@
 				"driving": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -375,7 +375,7 @@
 				"aim": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -390,7 +390,7 @@
 				"reflexes": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -495,7 +495,7 @@
 				}
 			},
 			"attributes": {
-				"dex": {
+				"agi": {
 					"value": 1,
 					"bonus": 0
 				},
@@ -503,7 +503,7 @@
 					"value": 1,
 					"bonus": 0
 				},
-				"vit": {
+				"vig": {
 					"value": 1,
 					"bonus": 0
 				},
@@ -511,7 +511,7 @@
 					"value": 1,
 					"bonus": 0
 				},
-				"str": {
+				"for": {
 					"value": 1,
 					"bonus": 0
 				}
@@ -524,7 +524,7 @@
 					"value": 0,
 					"max": 10
 				},
-				"dex": {
+				"agi": {
 					"value": 0
 				},
 				"int": {
@@ -533,10 +533,10 @@
 				"pre": {
 					"value": 0
 				},
-				"str": {
+				"for": {
 					"value": 0
 				},
-				"vit": {
+				"vig": {
 					"value": 0
 				},
 				"movement": {
@@ -590,7 +590,7 @@
 					"value": 0,
 					"max": 10
 				},
-				"dex": {
+				"agi": {
 					"value": 0
 				},
 				"int": {
@@ -599,10 +599,10 @@
 				"pre": {
 					"value": 0
 				},
-				"str": {
+				"for": {
 					"value": 0
 				},
-				"vit": {
+				"vig": {
 					"value": 0
 				},
 				"movement": {
@@ -691,7 +691,7 @@
 				"acrobatics": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -736,7 +736,7 @@
 				"athleticism": {
 					"value": 0,
 					"attr": [
-						"str",
+						"for",
 						1
 					],
 					"degree": {
@@ -781,7 +781,7 @@
 				"crime": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -826,7 +826,7 @@
 				"resilience": {
 					"value": 0,
 					"attr": [
-						"vit",
+						"vig",
 						1
 					],
 					"degree": {
@@ -841,7 +841,7 @@
 				"stealth": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -856,7 +856,7 @@
 				"initiative": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -916,7 +916,7 @@
 				"fighting": {
 					"value": 0,
 					"attr": [
-						"str",
+						"for",
 						1
 					],
 					"degree": {
@@ -976,7 +976,7 @@
 				"driving": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -991,7 +991,7 @@
 				"aim": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -1006,7 +1006,7 @@
 				"reflexes": {
 					"value": 0,
 					"attr": [
-						"dex",
+						"agi",
 						1
 					],
 					"degree": {
@@ -1111,7 +1111,7 @@
 				}
 			},
 			"attributes": {
-				"dex": {
+				"agi": {
 					"value": 1,
 					"bonus": 0
 				},
@@ -1119,7 +1119,7 @@
 					"value": 1,
 					"bonus": 0
 				},
-				"vit": {
+				"vig": {
 					"value": 1,
 					"bonus": 0
 				},
@@ -1127,7 +1127,7 @@
 					"value": 1,
 					"bonus": 0
 				},
-				"str": {
+				"for": {
 					"value": 1,
 					"bonus": 0
 				}

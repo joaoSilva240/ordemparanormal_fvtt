@@ -42,6 +42,8 @@ export class OrdemActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			deleteDoc: this._deleteDoc,
 			toggleEffect: this._toggleEffect,
 			onRoll: this.#onRoll,
+			onRollAttack: this.#onRollAttack,
+			onRollDamage: this.#onRollDamage,
 			onRollSkillCheck: this.#onRollSkillCheck,
 			onRollAttributeTest: this.#onRollAttributeTest,
 			onSetSkillDegree: this.#onSetSkillDegree
@@ -738,6 +740,20 @@ export class OrdemActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 				if (item) return item.roll();
 			}
 		}
+	}
+
+	static async #onRollAttack(event, target) {
+		event.preventDefault();
+		const itemId = target.closest('.item')?.dataset?.itemId;
+		const item = this.actor.items.get(itemId);
+		if (item?.rollAttack) return item.rollAttack({ event });
+	}
+
+	static async #onRollDamage(event, target) {
+		event.preventDefault();
+		const itemId = target.closest('.item')?.dataset?.itemId;
+		const item = this.actor.items.get(itemId);
+		if (item?.rollDamage) return item.rollDamage({ event });
 	}
 
 	/**
