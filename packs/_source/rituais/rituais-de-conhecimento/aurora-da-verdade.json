@@ -1,0 +1,48 @@
+{
+  "name": "Aurora da Verdade",
+  "type": "ritual",
+  "_id": "zbzN28GkyW1JIsvT",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/knowledge/Visão%20do%20Oculto.svg",
+  "system": {
+    "description": "<p>Uma luz espectral como ondas de uma aurora boreal dourada surge na área do ritual. Qualquer ser dentro dessa área é obrigado a <strong>falar apenas a verdade</strong>, inclusive o conjurador. Se passar na resistência, o ser pode mentir (percebido com testes de Intuição).</p><p>Qualquer ser que tente se esconder, obter camuflagem ou ficar invisível dentro da luz é <strong>imediatamente revelado</strong>.</p><p><strong>Discente (+3 PE):</strong> muda o alcance para médio e a área para esfera com 9m de raio. O conjurador não é mais afetado.</p><p><strong>Verdadeiro (+7 PE):</strong> como Discente, mas muda o alcance para longo e a duração para cena. Você pode ouvir tudo que é falado na área. Requer 4º círculo e afinidade.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 2,
+    "element": "knowledge",
+    "target": "area",
+    "execution": "default",
+    "range": "short",
+    "area": {
+      "name": "sphere",
+      "size": "3m",
+      "type": "radius"
+    },
+    "duration": "sustained",
+    "resistance": "partial",
+    "studentForm": true,
+    "trueForm": true,
+    "skillResis": "will",
+    "targetQtd": ""
+  },
+  "effects": [],
+  "folder": "eMAtlS5v4gXg6bgF",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778779219101,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!zbzN28GkyW1JIsvT"
+}

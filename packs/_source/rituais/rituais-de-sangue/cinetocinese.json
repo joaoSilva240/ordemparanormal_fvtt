@@ -1,0 +1,47 @@
+{
+  "name": "Cinetocinese",
+  "type": "ritual",
+  "_id": "GfmUzkMDyjXcmGjn",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/blood/Sangue%20Vivo.svg",
+  "system": {
+    "description": "<p>Ninguém se surpreende com os feitos impossíveis de um cultista de Sangue. Trocar racionalidade por um físico sobrenatural é entorpecente e viciante, e permite viver experiências que inundam a mente de adrenalina.</p><p>Quando você <strong>falha em um teste de Acrobacia ou Atletismo</strong>, pode conjurar esse ritual para repetir esse teste, usando <strong>Presença</strong> no lugar do atributo base daquela perícia. Alternativamente, quando sofre <strong>dano de impacto</strong>, você pode usar esse ritual para reduzir esse dano em <strong>20</strong>. Em qualquer caso, você só pode usar este ritual <strong>uma vez por rodada</strong>.</p><p>Quando conjura esse ritual você entra em um transe de Sangue momentâneo. Se usá-lo para reduzir dano, mesmo que reduza o dano a 0, logo após o impacto o Sangue retorce seus ossos e tendões, fazendo com que você passe <strong>1 rodada atordoado</strong>.</p><p><strong>Discente (+3 PE):</strong> muda a redução de dano de impacto para <strong>40</strong>.</p><p><strong>Verdadeiro (+7 PE):</strong> muda a redução de dano de impacto para <strong>70</strong>. Requer 4º círculo e afinidade. Na próxima cena, você está sob efeito de fome e sede (OPRPG, p. 292).</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 2,
+    "element": "blood",
+    "target": "",
+    "execution": "reaction",
+    "range": "personal",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "instantaneous",
+    "resistance": "",
+    "studentForm": true,
+    "trueForm": true,
+    "targetQtd": ""
+  },
+  "effects": [],
+  "folder": "SS5t5i0IayvkgoVF",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778779219081,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!GfmUzkMDyjXcmGjn"
+}

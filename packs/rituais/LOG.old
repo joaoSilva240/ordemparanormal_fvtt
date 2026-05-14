@@ -1,0 +1,5 @@
+2026/05/14-14:52:02.484 5014 Delete type=3 #1
+2026/05/14-14:52:02.500 4edc Level-0 table #5: started
+2026/05/14-14:52:02.504 4edc Level-0 table #5: 13844 bytes OK
+2026/05/14-14:52:02.505 4edc Delete type=0 #3
+2026/05/14-14:52:02.506 4edc Manual compaction at level-0 from '!folders!HsgK7qH3wpZkmUcX' @ 72057594037927935 : 1 .. '!items!zbzN28GkyW1JIsvT' @ 0 : 0; will stop at (end)

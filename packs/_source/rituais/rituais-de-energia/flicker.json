@@ -1,0 +1,47 @@
+{
+  "name": "Flicker",
+  "type": "ritual",
+  "_id": "V3N5SYfnztF3Du2Y",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/energy/Campo%20Protetor.svg",
+  "system": {
+    "description": "<p>Você reorganiza suas moléculas até que se deformem em fótons. Enquanto estiver nesse estado, você e seus objetos são capazes de <strong>atravessar objetos sólidos</strong>.</p><p>Para se mover através de cada objeto sólido, você deve gastar uma <strong>ação de movimento</strong>. Há <strong>25% (1 em 1d4)</strong> de você não atravessar.</p><p>Em cenas de perseguição, permite usar a ação de cortar caminho sem penalidade em Atletismo.</p><p>Para cada rodada ativo, sofre <strong>1d4 pontos de dano de Energia</strong> que ignoram resistência. Se terminar a rodada dentro de um objeto sólido, sofre +1d4 de dano de Energia.</p><p><strong>Discente (+3 PE):</strong> muda o alcance para toque e o alvo para 1 ser voluntário.</p><p><strong>Verdadeiro (+7 PE):</strong> muda o alcance para curto e o alvo para até 5 seres voluntários. Requer 4º círculo.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 2,
+    "element": "energy",
+    "target": "",
+    "execution": "default",
+    "range": "personal",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "sustained",
+    "resistance": "",
+    "studentForm": true,
+    "trueForm": true,
+    "targetQtd": ""
+  },
+  "effects": [],
+  "folder": "HsgK7qH3wpZkmUcX",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778779219096,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!V3N5SYfnztF3Du2Y"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Rituais de Sangue",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "SS5t5i0IayvkgoVF",
+  "sort": 100000,
+  "color": "#781115",
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1747243200000,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!folders!SS5t5i0IayvkgoVF"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "Carne Putrefata",
+  "type": "ritual",
+  "_id": "8Kx2TddXu1sgkRKD",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/death/Surto%20Temporal.svg",
+  "system": {
+    "description": "<p>Seu corpo é sustentado pelo Lodo da Morte. Você sofre <strong>–5 em Diplomacia</strong>, mas recebe <strong>+5 em Furtividade</strong> e <strong>+10 em Enganação</strong> para se fingir de morto. Em uma cena de furtividade, sua visibilidade é reduzida em 1 enquanto parado.</p><p>Para cada rodada em que mantém esse ritual, você sofre <strong>1d4 pontos de dano de Morte</strong> que ignora resistências.</p><p><strong>Discente (+4 PE):</strong> muda o alcance para toque e o alvo para 1 ser voluntário.</p><p><strong>Verdadeiro (+9 PE):</strong> muda o alcance para curto e o alvo para até 5 seres voluntários. Requer afinidade.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 3,
+    "element": "death",
+    "target": "",
+    "execution": "default",
+    "range": "personal",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "sustained",
+    "resistance": "",
+    "studentForm": true,
+    "trueForm": true,
+    "targetQtd": ""
+  },
+  "effects": [],
+  "folder": "cGgAlvSPnBFYfMHL",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778779219095,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!8Kx2TddXu1sgkRKD"
+}

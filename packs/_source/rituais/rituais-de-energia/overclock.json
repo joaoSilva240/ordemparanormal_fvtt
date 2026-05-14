@@ -1,0 +1,47 @@
+{
+  "name": "Overclock",
+  "type": "ritual",
+  "_id": "JYSpQ2h9jwZMBNnS",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/energy/Campo%20Protetor.svg",
+  "system": {
+    "description": "<p>Ao fazer um <strong>teste de Tecnologia</strong> para lidar com um objeto eletrônico, você pode, após saber se passou no teste ou não, conjurar este ritual para receber as informações que buscava de outra forma.</p><p>O jogador será desafiado em um jogo de <strong>\"estátua\"</strong>: enquanto a música tocar, deve se mover; quando o mestre interrompê-la, deve ficar imóvel. O mínimo movimento errado resulta em falha. Se não falhar até o fim da música, descobre o que queria do aparelho.</p><p>Após o ritual, o objeto é tomado por flickering e chiados, tornando seu uso impossível.</p><p><strong>Discente (+2 PE):</strong> você só falha se errar duas vezes no jogo. Requer 2º círculo.</p><p><strong>Verdadeiro (+5 PE):</strong> você só falha se errar três vezes. Requer 3º círculo.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 1,
+    "element": "energy",
+    "target": "",
+    "execution": "reaction",
+    "range": "personal",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "instantaneous",
+    "resistance": "",
+    "studentForm": true,
+    "trueForm": true,
+    "targetQtd": ""
+  },
+  "effects": [],
+  "folder": "HsgK7qH3wpZkmUcX",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778779219098,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!JYSpQ2h9jwZMBNnS"
+}

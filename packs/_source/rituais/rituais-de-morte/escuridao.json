@@ -1,0 +1,47 @@
+{
+  "name": "Escuridão",
+  "type": "ritual",
+  "_id": "KXHJ30INALq1m3OO",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/death/Surto%20Temporal.svg",
+  "system": {
+    "description": "<p>Ao conjurar esse ritual, qualquer <strong>fonte de luz em alcance curto de você</strong>, natural ou paranormal, <strong>se apaga</strong> (lâmpadas estouram, janelas se fecham, nuvens bloqueiam o sol, velas se dissipam). O efeito é instantâneo, mas eventos temporários permanecem mantendo a escuridão até o fim da cena.</p><p>Você recebe <strong>visão no escuro</strong> até o fim da cena.</p><p><strong>Discente (+2 PE):</strong> muda o alcance para determinar fontes de luz afetadas para longo. Requer 2º círculo.</p><p><strong>Verdadeiro (+5 PE):</strong> como Discente, e além de você, até cinco outros seres dentro desse alcance recebem visão no escuro. Requer 3º círculo.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 1,
+    "element": "death",
+    "target": "",
+    "execution": "default",
+    "range": "personal",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "instantaneous",
+    "resistance": "",
+    "studentForm": true,
+    "trueForm": true,
+    "targetQtd": ""
+  },
+  "effects": [],
+  "folder": "cGgAlvSPnBFYfMHL",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778779219094,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!KXHJ30INALq1m3OO"
+}

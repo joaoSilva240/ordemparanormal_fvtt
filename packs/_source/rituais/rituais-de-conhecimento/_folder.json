@@ -1,0 +1,19 @@
+{
+  "name": "Rituais de Conhecimento",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "eMAtlS5v4gXg6bgF",
+  "sort": 300000,
+  "color": "#c4a23b",
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1747243200000,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!folders!eMAtlS5v4gXg6bgF"
+}
