@@ -1,0 +1,52 @@
+{
+  "name": "Inexistir",
+  "type": "ritual",
+  "_id": "nHAodaJ72iFN54Zf",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/knowledge/Visão%20do%20Oculto.svg",
+  "system": {
+    "description": "<p>O alvo sofre <strong>2d6+2</strong> pontos de dano de Conhecimento e fica <strong>frustrado</strong> por uma rodada. Se passar no teste de resistência, sofre apenas metade do dano e evita a condição. O alvo precisa ter um cérebro.</p><p><strong>Discente (+2 PE):</strong> muda o alcance para longo, o dano para <strong>3d6+3</strong> e o alvo para até 5 seres. Requer 2º círculo.</p><p><strong>Verdadeiro (+5 PE):</strong> muda o alcance para extremo, o dano para <strong>8d6+8</strong> e a condição para <strong>esmorecido</strong>. Se passar na resistência, fica frustrado em vez de esmorecido. Requer 3º círculo.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 1,
+    "element": "knowledge",
+    "target": "creatures",
+    "execution": "default",
+    "range": "short",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "instantaneous",
+    "resistance": "partial",
+    "studentForm": true,
+    "trueForm": true,
+    "skillResis": "will",
+    "targetQtd": "1",
+    "damage": {
+      "formula": "2d6+2",
+      "type": "knowledge"
+    }
+  },
+  "effects": [],
+  "folder": "eMAtlS5v4gXg6bgF",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778782389766,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!nHAodaJ72iFN54Zf"
+}

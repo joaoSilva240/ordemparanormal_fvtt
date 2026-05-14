@@ -1,0 +1,52 @@
+{
+  "name": "A Chegada da Vípora",
+  "type": "ritual",
+  "_id": "WVjaleWZtHI3LloN",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/death/Surto%20Temporal.svg",
+  "system": {
+    "description": "<p>Você distorce a Realidade em espirais capazes de alterar as condições temporais de um objeto para avançá-lo no tempo, fazendo com que ele atinja o estado de decomposição mais avançado possível.</p><p>Dependendo da natureza do objeto ele pode ficar <strong>danificado</strong> (–5 em testes em que seja empregado) ou ser <strong>completamente destruído</strong>.</p><p>Um objeto em uso por alguém ainda pode ser afetado, mas o ser pode fazer um <strong>teste de Fortitude</strong> para proteger o objeto.</p><p><strong>Verdadeiro (+10 PE):</strong> muda o tamanho do objeto afetado para Enorme. Requer afinidade.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 4,
+    "element": "death",
+    "target": "equipment",
+    "execution": "default",
+    "range": "short",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "instantaneous",
+    "resistance": "nullifies",
+    "studentForm": false,
+    "trueForm": true,
+    "targetQtd": "1",
+    "skillResis": "resilience",
+    "damage": {
+      "formula": "",
+      "type": ""
+    }
+  },
+  "effects": [],
+  "folder": "cGgAlvSPnBFYfMHL",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778782389764,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!WVjaleWZtHI3LloN"
+}

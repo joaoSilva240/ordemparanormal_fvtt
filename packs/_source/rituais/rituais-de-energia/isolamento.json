@@ -1,0 +1,51 @@
+{
+  "name": "Isolamento",
+  "type": "ritual",
+  "_id": "12bbPitBhu5azfEr",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/energy/Campo%20Protetor.svg",
+  "system": {
+    "description": "<p>Você inibe a emissão de qualquer som a partir de você. Seus passos não emitem barulho, sua arma não tem estampido, sua voz é emudecida. Também impede que sons alcancem você.</p><p>Concede <strong>+10 em testes de Furtividade</strong> e reduz qualquer ganho de visibilidade em cenas de furtividade em 1.</p><p>O jogador só pode falar na mesa se tiver permissão do mestre. Se falar sem permissão, o ritual se esvai.</p><p><strong>Discente (+4 PE):</strong> muda o alcance para toque e o alvo para 1 ser.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 3,
+    "element": "energy",
+    "target": "",
+    "execution": "default",
+    "range": "personal",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "scene",
+    "resistance": "",
+    "studentForm": true,
+    "trueForm": false,
+    "targetQtd": "",
+    "damage": {
+      "formula": "",
+      "type": ""
+    }
+  },
+  "effects": [],
+  "folder": "HsgK7qH3wpZkmUcX",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778782389783,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!12bbPitBhu5azfEr"
+}

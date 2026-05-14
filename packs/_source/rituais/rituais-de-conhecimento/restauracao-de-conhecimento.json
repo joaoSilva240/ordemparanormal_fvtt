@@ -1,0 +1,51 @@
+{
+  "name": "Restauração de Conhecimento",
+  "type": "ritual",
+  "_id": "68psSXSe0GL0Jj1z",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/knowledge/Visão%20do%20Oculto.svg",
+  "system": {
+    "description": "<p>Você toca um objeto que está ilegível ou incompreensível por ter sido danificado pelo tempo. O objeto precisa ser uma fonte de conhecimento escrito (livro, caderno, papel, pergaminho). Basta um pedacinho equivalente a um dedo mindinho.</p><p>Após a conjuração, o objeto é <strong>completamente restaurado</strong> para o momento em que recebeu sua última anotação e permanece assim enquanto o conjurador o tocar. O Conhecimento não consegue relembrar objetos destruídos por meios paranormais.</p><p><strong>Discente (+4 PE):</strong> o objeto permanece restaurado até o fim da missão.</p><p><strong>Verdadeiro (+9 PE):</strong> o ritual pode ser usado para alterar o objeto de forma imperceptível (ex.: transformar um texto qualquer em um documento legítimo). O objeto permanece alterado até o fim da missão. Requer afinidade.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 3,
+    "element": "knowledge",
+    "target": "equipment",
+    "execution": "default",
+    "range": "touch",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "instantaneous",
+    "resistance": "",
+    "studentForm": true,
+    "trueForm": true,
+    "targetQtd": "1",
+    "damage": {
+      "formula": "",
+      "type": ""
+    }
+  },
+  "effects": [],
+  "folder": "eMAtlS5v4gXg6bgF",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778782389774,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!68psSXSe0GL0Jj1z"
+}

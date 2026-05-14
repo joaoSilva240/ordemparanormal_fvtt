@@ -1,0 +1,52 @@
+{
+  "name": "Agulhas Sangrentas",
+  "type": "ritual",
+  "_id": "YH4zjcnXtykDVarb",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/blood/Sangue%20Vivo.svg",
+  "system": {
+    "description": "<p>Você usa seu corpo como passagem para o Sangue, projetando agulhas e lâminas rubras praticamente imperceptíveis que se projetam contra o alvo. O ser sofre <strong>3d4+3</strong> pontos de dano de corte e fica <strong>sangrando</strong>. Se passar no teste de resistência, sofre apenas metade do dano e evita a condição.</p><p><strong>Discente (+2 PE):</strong> muda o alcance para médio, o dano para <strong>5d4+5</strong> e o alvo para explosão com 6m de raio. Requer 2º círculo.</p><p><strong>Verdadeiro (+5 PE):</strong> muda o alcance para longo, o dano para <strong>10d4+10</strong> e o alvo para explosão com 6m de raio. Passar no teste de resistência não evita a condição. Requer 3º círculo.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 1,
+    "element": "blood",
+    "target": "creatures",
+    "execution": "default",
+    "range": "short",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "instantaneous",
+    "resistance": "partial",
+    "studentForm": true,
+    "trueForm": true,
+    "skillResis": "reflexes",
+    "targetQtd": "1",
+    "damage": {
+      "formula": "3d4+3",
+      "type": "cuttingDamage"
+    }
+  },
+  "effects": [],
+  "folder": "SS5t5i0IayvkgoVF",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778782389717,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!YH4zjcnXtykDVarb"
+}

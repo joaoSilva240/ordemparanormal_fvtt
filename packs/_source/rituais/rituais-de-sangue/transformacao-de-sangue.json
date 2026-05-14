@@ -1,0 +1,51 @@
+{
+  "name": "Transformação de Sangue",
+  "type": "ritual",
+  "_id": "HEXFnRtCj4wj4BZD",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/blood/Sangue%20Vivo.svg",
+  "system": {
+    "description": "<p>Você faz o sacrifício supremo e se entrega ao Sangue, sendo devorado em uma monstruosidade bestial por completo.</p><p>Você recebe <strong>faro</strong>, <strong>visão no escuro</strong>, <strong>cura acelerada 10</strong>, <strong>+10 em testes de ataque e rolagens de dano corpo a corpo</strong> e <strong>na Defesa</strong>, <strong>30 PV temporários</strong>. Seus <strong>ataques desarmados causam 1 dado de dano adicional</strong> e são considerados <strong>letais</strong>.</p><p>Após invocar o ritual, você <strong>não pode mais fazer ações que demandem foco e concentração</strong> (como conjurar um ritual). Sofre <strong>–5 em testes de perícias para interação social</strong>.</p><p>Este ritual <strong>não possui fim</strong>. Quando a cena em que conjurou o ritual acaba, você se torna <strong>permanentemente uma criatura de Sangue</strong>, sacrificando seu personagem para o Outro Lado.</p><p><strong>Discente (+5 PE):</strong> muda os bônus para +20 e os PV temporários para 50. Requer afinidade.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 4,
+    "element": "blood",
+    "target": "",
+    "execution": "default",
+    "range": "personal",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "setDuration",
+    "resistance": "",
+    "studentForm": true,
+    "trueForm": false,
+    "targetQtd": "",
+    "damage": {
+      "formula": "",
+      "type": ""
+    }
+  },
+  "effects": [],
+  "folder": "SS5t5i0IayvkgoVF",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778782389741,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!HEXFnRtCj4wj4BZD"
+}

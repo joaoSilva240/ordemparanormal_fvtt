@@ -1,0 +1,52 @@
+{
+  "name": "Sigilo do Conhecimento",
+  "type": "ritual",
+  "_id": "fT4PBnxuF5M5Absl",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/knowledge/Visão%20do%20Oculto.svg",
+  "system": {
+    "description": "<p>Você profana a Realidade pronunciando um dos Sigilos do Conhecimento. Escolha um dos efeitos abaixo:</p><p><strong>Esquecer:</strong> o alvo esquece quem é e fica <strong>atordoado</strong> por 1d4+1 rodadas (uma vez por cena). Se passar na resistência, fica desprevenido por 1d4 rodadas.</p><p><strong>Cegar:</strong> o alvo fica <strong>cego</strong>. Se passar na resistência, fica ofuscado.</p><p><strong>Inexistir:</strong> o alvo <strong>desaparece</strong> da Realidade por 1d4+1 rodadas, ou 1 rodada se passar na resistência. Um ser só pode ser inexistido uma vez por cena.</p><p><strong>Discente (+5 PE):</strong> muda o alcance para extremo.</p><p><strong>Verdadeiro (+10 PE):</strong> muda o alvo para até cinco seres. Requer afinidade.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 4,
+    "element": "knowledge",
+    "target": "creatures",
+    "execution": "default",
+    "range": "short",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "setDuration",
+    "resistance": "partial",
+    "studentForm": true,
+    "trueForm": true,
+    "skillResis": "will",
+    "targetQtd": "1",
+    "damage": {
+      "formula": "",
+      "type": ""
+    }
+  },
+  "effects": [],
+  "folder": "eMAtlS5v4gXg6bgF",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778782389776,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!fT4PBnxuF5M5Absl"
+}

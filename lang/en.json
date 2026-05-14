@@ -407,6 +407,7 @@
 	"op.damage": "Damage",
 	"op.rollDmg": "Roll Damage",
 	"op.rollAtk": "Roll Attack",
+	"op.ritualSaveLabel": "Resist (DC {dt})",
 
 	"op.Advantage": "Advantage (+1d20)",
 	"op.Normal": "Roll Dice",

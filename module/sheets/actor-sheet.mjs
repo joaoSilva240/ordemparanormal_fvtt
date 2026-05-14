@@ -44,6 +44,8 @@ export class OrdemActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 			onRoll: this.#onRoll,
 			onRollAttack: this.#onRollAttack,
 			onRollDamage: this.#onRollDamage,
+			ritualSave: this.#onRitualSave,
+			ritualDamage: this.#onRitualDamage,
 			onRollSkillCheck: this.#onRollSkillCheck,
 			onRollAttributeTest: this.#onRollAttributeTest,
 			onSetSkillDegree: this.#onSetSkillDegree
@@ -756,8 +758,22 @@ export class OrdemActorSheet extends api.HandlebarsApplicationMixin(sheets.Actor
 		if (item?.rollDamage) return item.rollDamage({ event });
 	}
 
+	static async #onRitualSave(event, target) {
+		event.preventDefault();
+		const itemId = target.closest('.item')?.dataset?.itemId;
+		const item = this.actor.items.get(itemId);
+		if (item?.rollRitualSave) return item.rollRitualSave({ event });
+	}
+
+	static async #onRitualDamage(event, target) {
+		event.preventDefault();
+		const itemId = target.closest('.item')?.dataset?.itemId;
+		const item = this.actor.items.get(itemId);
+		if (item?.rollRitualDamage) return item.rollRitualDamage({ event });
+	}
+
 	/**
-   * Handle rolling an Ability test or saving throw.
+	 * Handle rolling an Ability test or saving throw.
    * @param {Event} event      The originating click event.
    * @private
    */

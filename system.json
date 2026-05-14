@@ -113,6 +113,18 @@
       }
     },
     {
+      "name": "rituais",
+      "label": "Rituais",
+      "system": "ordemparanormal",
+      "path": "packs/rituais",
+      "type": "Item",
+      "private": false,
+      "flags": {},
+      "ownership": {
+        "PLAYER": "OBSERVER"
+      }
+    },
+    {
       "name": "fighterAbilities",
       "label": "Habilidades de Combatente",
       "system": "ordemparanormal",
@@ -241,6 +253,14 @@
             "armaments",
             "generalEquipments",
             "protections"
+          ]
+        },
+        {
+          "name": "Rituais do Sobrevivendo ao Horror",
+          "sorting": "m",
+          "color": "#1a0033",
+          "packs": [
+            "rituais"
           ]
         },
         {

@@ -1,0 +1,51 @@
+{
+  "name": "Faro Rubro",
+  "type": "ritual",
+  "_id": "7bTbBr7R9WE3t5hG",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/blood/Sangue%20Vivo.svg",
+  "system": {
+    "description": "<p>Enquanto estiver sob efeito desse ritual seu nariz enruga, suas pupilas dilatam e os odores ao seu redor se intensificam. Você recebe <strong>faro</strong> (OPRPG, p. 179). Além disso, em uma <strong>cena de perseguição</strong> você recebe <strong>+5 nos testes de Atletismo</strong> e <strong>não perde PV pela ação de esforço extra</strong>, desde que o caçador ou a presa emita odores.</p><p><strong>Discente (+4 PE):</strong> muda o alcance para toque e o alvo para 1 ser.</p><p><strong>Verdadeiro (+9 PE):</strong> muda o alcance para curto e o alvo para até 5 seres. Requer afinidade.</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 3,
+    "element": "blood",
+    "target": "",
+    "execution": "default",
+    "range": "personal",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "scene",
+    "resistance": "",
+    "studentForm": true,
+    "trueForm": true,
+    "targetQtd": "",
+    "damage": {
+      "formula": "",
+      "type": ""
+    }
+  },
+  "effects": [],
+  "folder": "SS5t5i0IayvkgoVF",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778782389737,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!7bTbBr7R9WE3t5hG"
+}

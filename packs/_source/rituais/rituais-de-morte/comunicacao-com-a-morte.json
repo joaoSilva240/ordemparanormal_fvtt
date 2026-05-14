@@ -1,0 +1,51 @@
+{
+  "name": "Comunicação com a Morte",
+  "type": "ritual",
+  "_id": "D4Ctlfag05jENzW2",
+  "img": "systems/ordemparanormal/media/icons/abilities/paranormal/death/Surto%20Temporal.svg",
+  "system": {
+    "description": "<p>Ao preparar um cadáver humano e conjurar esse ritual, o Lodo da Morte se espalha por dentro do cadáver, reanimando-o forçadamente. O cadáver é capaz de responder <strong>uma pergunta por rodada</strong> em que você mantém o ritual sustentado, até o limite de <strong>três rodadas</strong>.</p><p>Não há necessidade de testes para tirar as respostas do cadáver, mas a clareza e objetividade delas ficam a critério do mestre.</p><p>Ao final da terceira resposta, o cadáver se transforma em um <strong>esqueleto de Lodo</strong> (OPRPG, p. 217).</p><p><strong>Discente (+3 PE):</strong> aumenta o limite para quatro rodadas. Ao final, o cadáver se transforma em um <strong>enraizado</strong> (OPRPG, p. 214).</p><p><strong>Verdadeiro (+7 PE):</strong> aumenta o limite para cinco rodadas. Requer 4º círculo e afinidade. Ao final, o cadáver se transforma em uma <strong>marionete</strong> (OPRPG, p. 218).</p>",
+    "weight": 1,
+    "category": 0,
+    "using": {
+      "state": true,
+      "class": "fas"
+    },
+    "circle": 2,
+    "element": "death",
+    "target": "creatures",
+    "execution": "default",
+    "range": "touch",
+    "area": {
+      "name": "",
+      "size": "",
+      "type": ""
+    },
+    "duration": "sustained",
+    "resistance": "",
+    "studentForm": true,
+    "trueForm": true,
+    "targetQtd": "1",
+    "damage": {
+      "formula": "",
+      "type": ""
+    }
+  },
+  "effects": [],
+  "folder": "cGgAlvSPnBFYfMHL",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "D087Zkcpssj33iAO": 3
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "ordemparanormal",
+    "systemVersion": "7.2.4",
+    "coreVersion": "12.331",
+    "createdTime": 1747243200000,
+    "modifiedTime": 1778782389753,
+    "lastModifiedBy": "D087Zkcpssj33iAO"
+  },
+  "_key": "!items!D4Ctlfag05jENzW2"
+}

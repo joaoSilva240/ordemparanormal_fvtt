@@ -19,3 +19,8 @@ packs/pathSpecialist
 
 # FORMATS
 *.map
+packs/createmissionptbr
+packs/generalptbr
+
+# DOCS
+docs/

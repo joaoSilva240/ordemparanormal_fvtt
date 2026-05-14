@@ -1235,6 +1235,12 @@
 			},
 			"duration": "",
 			"resistance": "",
+			"skillResis": "",
+			"targetQtd": "",
+			"damage": {
+				"formula": "",
+				"type": ""
+			},
 			"studentForm": false,
 			"trueForm": false
 		},

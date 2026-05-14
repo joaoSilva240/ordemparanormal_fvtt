@@ -89,7 +89,20 @@ async function compilePacks(packName) {
 		const src = path.join(PACK_SRC, folder.name);
 		const dest = path.join(PACK_DEST, folder.name);
 		logger.info(`Compiling pack ${folder.name}`);
-		await compilePack(src, dest, { recursive: true, log: true });
+		try {
+			await compilePack(src, dest, { recursive: true, log: true });
+		} catch (err) {
+			// Workaround for @foundryvtt/foundryvtt-cli v1.0.2 bug:
+			// LEVEL_ITERATOR_NOT_OPEN is thrown during LevelDB close after successful writes.
+			// The data IS persisted despite this error, so we can safely ignore it.
+			if (err.code === 'LEVEL_ITERATOR_NOT_OPEN') {
+				logger.warn(`LevelDB close warning (non-critical): ${err.message}`);
+			} else {
+				throw err;
+			}
+		}
+		// Small delay to ensure LevelDB resources are released between compilations
+		await new Promise(resolve => setTimeout(resolve, 500));
 	}
 }
 

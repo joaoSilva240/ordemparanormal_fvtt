@@ -78,15 +78,14 @@
 		{{/if}} {{#if data.formulas.damage}}
 		<button data-action="damage"><i class="fa-solid fa-dice"></i> {{localize "op.rollDmg"}}</button>
 		{{/if}}
-		<!-- {{#if data.studentForm}}
-		<button data-action="attack">
-			<i class="fa-solid fa-dice-d20"></i> Forma Discente
-		</button>
-		{{/if}} {{#if data.trueForm}}
-		<button data-action="attack">
-			<i class="fa-solid fa-dice-d20"></i> Forma Verdadeira
-		</button>
-		{{/if}} -->
+		{{#ifEquals item.type "ritual"}}
+			{{#if data.skillResis}}
+			<button data-action="ritualSave"><i class="fa-solid fa-shield"></i> {{i18n.saveLabel}}</button>
+			{{/if}}
+			{{#if data.damage.formula}}
+			<button data-action="ritualDamage"><i class="fa-solid fa-dice"></i> {{localize "op.rollDmg"}}</button>
+			{{/if}}
+		{{/ifEquals}}
 	</div>
 	<footer class="card-footer">
 		{{#each info}}
